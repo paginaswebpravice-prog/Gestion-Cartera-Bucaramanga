@@ -7,12 +7,18 @@
   top: 0;
   width: 100%;
   height: 90px;
+
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
+
   padding: 0 2.5rem;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
+
+  background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+  border-bottom: 1px solid rgba(0, 74, 128, 0.08);
+
+  box-shadow: 0 4px 18px rgba(0, 74, 128, 0.06);
+
   z-index: 1000;
 }
 
@@ -55,13 +61,37 @@
 .center a {
   text-decoration: none;
   color: #004a80;
+
   font-weight: 500;
   font-size: 0.95rem;
-  transition: color 0.2s ease;
+
+  position: relative;
+
+  transition: color 0.25s ease;
+}
+
+/* línea elegante al hover */
+
+.center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background: #f7c600;
+
+  transition: width 0.25s ease;
 }
 
 .center a:hover {
-  color: #5eb3e4;
+  color: #c4911a;
+}
+
+.center a:hover::after {
+  width: 100%;
 }
 
 /* =========================
@@ -79,20 +109,29 @@
 ========================= */
 
 .cta {
-  background-color: #f4c300;
-  color: #004a80;
+  background: linear-gradient(135deg, #f7c600, #c4911a);
+  color: #000;
+
   padding: 0.55rem 1.4rem;
+
   border: none;
-  border-radius: 4px;
+  border-radius: 999px;
+
   font-weight: 600;
   font-size: 0.9rem;
+
   cursor: pointer;
   white-space: nowrap;
-  transition: background-color 0.2s ease;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .cta:hover {
-  background-color: #c4911a;
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(196, 145, 26, 0.35);
 }
 
 /* =========================
@@ -101,10 +140,13 @@
 
 .menuButton {
   display: none;
+
   background: none;
   border: none;
+
   font-size: 1.6rem;
   cursor: pointer;
+
   color: #004a80;
 }
 
@@ -114,39 +156,54 @@
 
 .mobileMenu {
   position: fixed;
+
   top: 90px;
   left: 0;
+
   width: 100%;
-  background-color: #ffffff;
-  border-top: 1px solid #e5e5e5;
+
+  background: #ffffff;
+
+  border-top: 1px solid rgba(0, 74, 128, 0.08);
+
   padding: 2rem;
 
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 
+  box-shadow: 0 10px 30px rgba(0, 74, 128, 0.08);
+
   z-index: 999;
 }
 
 .mobileMenu a {
   text-decoration: none;
+
   color: #004a80;
+
   font-weight: 500;
   font-size: 1rem;
+
+  transition: color 0.2s ease;
 }
 
 .mobileMenu a:hover {
-  color: #5eb3e4;
+  color: #c4911a;
 }
 
 .mobileMenu button {
   margin-top: 1rem;
   align-self: flex-start;
-  background-color: #f4c300;
-  color: #004a80;
+
+  background: linear-gradient(135deg, #f7c600, #c4911a);
+  color: #000;
+
   padding: 0.6rem 1.4rem;
+
   border: none;
-  border-radius: 4px;
+  border-radius: 999px;
+
   font-weight: 600;
 }
 

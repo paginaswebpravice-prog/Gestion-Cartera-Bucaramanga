@@ -1,5 +1,6 @@
 .services {
   padding: 5rem 2.5rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f9fc 100%);
 }
 
 /* =========================
@@ -21,7 +22,7 @@
   display: block;
   width: 90px;
   height: 4px;
-  background-color: #004a80;
+  background-color: #f7c600;
   margin: 1.1rem auto 0;
   border-radius: 4px;
 }
@@ -59,10 +60,13 @@
 .card {
   padding: 2.4rem 2.2rem;
 
-  border-left: 7px solid #004a80;
-  border-radius: 10px;
+  background: #ffffff;
 
-  color: var(--c-black);
+  border-left: 6px solid #f7c600;
+  border-radius: 12px;
+
+  box-shadow: 0 10px 24px rgba(0, 74, 128, 0.08);
+
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -78,14 +82,14 @@
 .card p {
   margin-top: 0.9rem;
   line-height: 1.65;
-  color: #3e3e3e;
+  color: #444;
   font-size: 1rem;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
-  border-left-color: var(--c-gold);
+  box-shadow: 0 16px 36px rgba(0, 74, 128, 0.15);
+  border-left-color: #c4911a;
 }
 
 /* =========================
@@ -93,12 +97,12 @@
 ========================= */
 
 .healthCard {
-  background: linear-gradient(180deg, #fffaf3 0%, var(--c-primary) 100%);
-  border-left-color: var(--c-purple);
+  background: linear-gradient(180deg, #fffdf5 0%, #ffffff 100%);
+  border-left-color: #c4911a;
 }
 
 .healthCard h4 {
-  color: var(--c-purple);
+  color: #004a80;
 }
 
 /* =========================
@@ -112,26 +116,31 @@
 
 .ctaButton {
   display: inline-block;
-  padding: 0.85rem 2.4rem;
+  padding: 0.9rem 2.5rem;
 
-  background-color: #004a80;
+  background: linear-gradient(135deg, #004a80, #005fa3);
   color: #ffffff;
+
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.4px;
 
   border-radius: 999px;
   text-decoration: none;
+
   transition:
-    background-color 0.25s ease,
     transform 0.25s ease,
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
 .ctaButton:hover {
-  background-color: #00375f;
+  background: linear-gradient(135deg, #c4911a, #f7c600);
+  color: #000;
+
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 74, 128, 0.35);
+
+  box-shadow: 0 10px 24px rgba(196, 145, 26, 0.35);
 }
 
 /* =========================

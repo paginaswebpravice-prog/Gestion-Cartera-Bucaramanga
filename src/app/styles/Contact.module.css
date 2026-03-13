@@ -81,7 +81,6 @@
   width: 100%;
   max-width: 720px;
   text-align: center;
-  border: 2px solid #f7c600;
 }
 
 .mapBox h3 {
@@ -98,6 +97,7 @@
   border-radius: 16px;
   overflow: hidden;
   background-color: #e5e7eb;
+  border: 2px solid #f7c600;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
