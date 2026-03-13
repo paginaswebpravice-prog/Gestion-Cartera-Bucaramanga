@@ -11,7 +11,7 @@
   padding: 6rem 3rem;
   gap: 4rem;
 
-  background-color: #f4f6f8;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f8fb 100%);
 
   max-width: 1200px;
   margin: 0 auto;
@@ -30,37 +30,63 @@
   color: #004a80;
   margin-bottom: 2rem;
   line-height: 1.2;
+  position: relative;
+}
+
+/* línea decorativa elegante */
+.text h2::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: #f7c600;
+  display: block;
+  margin-top: 14px;
+  border-radius: 3px;
 }
 
 .text p {
   margin-top: 1.6rem;
   line-height: 1.8;
   font-size: 1.1rem;
-  color: #555555;
+  color: #333333;
 }
 
 /* =========================
-   IMAGE CONTAINER (CLAVE)
+   IMAGE CONTAINER
 ========================= */
 
 .imagePlaceholder {
-  position: relative; /* 🔑 OBLIGATORIO PARA Image fill */
+  position: relative;
   width: 100%;
   max-width: 420px;
 
-  aspect-ratio: 1 / 1; /* 🔑 mantiene proporción */
+  aspect-ratio: 1 / 1;
   margin: 0 auto;
 
   background: #ffffff;
-  border-radius: 16px;
-  overflow: hidden; /* 🔑 evita desbordes */
+  border-radius: 18px;
+  overflow: hidden;
 
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 74, 128, 0.08);
+
+  box-shadow: 0 18px 40px rgba(0, 74, 128, 0.12);
 }
 
-/* Imagen */
+/* detalle decorativo */
+.imagePlaceholder::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: #f7c600;
+  top: -20px;
+  left: -20px;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
 .image {
-  object-fit: contain; /* logos NO se recortan */
+  object-fit: contain;
 }
 
 /* =========================
@@ -68,18 +94,18 @@
 ========================= */
 
 .featuredImage {
-  position: relative; /* 🔑 OBLIGATORIO */
+  position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
 
   border-radius: 20px;
   overflow: hidden;
 
-  background: #e5e7eb;
+  background: linear-gradient(135deg, #004a80, #2a6fa3);
 }
 
 .featuredImage .image {
-  object-fit: cover; /* 🔑 imágenes editoriales */
+  object-fit: cover;
 }
 
 /* =========================
@@ -107,6 +133,10 @@
 
   .text {
     margin: 0 auto;
+  }
+
+  .text h2::after {
+    margin: 14px auto 0 auto;
   }
 
   .imagePlaceholder {
