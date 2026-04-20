@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   authors: [{ name: "Pravice" }],
   creator: "Pravice",
 
+  other: {
+    "google-site-verification": "Sjvr4v7EGRfdGd1hqq8XTBMdqvhfUlmZSvvsfo5lKmo",
+  },
+
   openGraph: {
     type: "website",
     locale: "es_CO",
