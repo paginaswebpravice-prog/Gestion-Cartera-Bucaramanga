@@ -36,19 +36,19 @@ export default function Navbar() {
       {/* Menú desktop */}
       <ul className={styles.center}>
         <li>
-          <Link href="#inicio">Inicio</Link>
+          <Link href="/">Inicio</Link>
         </li>
         <li>
-          <Link href="#servicios">Servicios</Link>
+          <Link href="/#servicios">Servicios</Link>
         </li>
         <li>
-          <Link href="#nosotros">Nosotros</Link>
+          <Link href="/#nosotros">Nosotros</Link>
         </li>
         <li>
           <Link href="/blog">Blog</Link>
         </li>
         <li>
-          <Link href="#contacto">Contacto</Link>
+          <Link href="/#contacto">Contacto</Link>
         </li>
       </ul>
 
