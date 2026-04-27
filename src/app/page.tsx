@@ -2,16 +2,12 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
 import styles from "./page.module.css";
 import Blog from "./components/Blog";
 
 export default function Home() {
   return (
     <>
-      <NavBar />
-
       <main className={styles.main}>
         <section
           id="inicio"
@@ -52,8 +48,6 @@ export default function Home() {
         >
           <Contact />
         </section>
-
-        <Footer />
       </main>
     </>
   );
