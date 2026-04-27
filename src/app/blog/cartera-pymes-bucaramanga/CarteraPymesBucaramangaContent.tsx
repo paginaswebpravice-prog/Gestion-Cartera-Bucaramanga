@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "../BlogContent.module.css";
+import styles from "../BlogPost.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
