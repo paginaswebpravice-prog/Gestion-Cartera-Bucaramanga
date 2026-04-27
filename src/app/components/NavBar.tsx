@@ -70,19 +70,19 @@ export default function Navbar() {
       {/* Menú mobile */}
       {open && (
         <div className={styles.mobileMenu}>
-          <Link href="#inicio" onClick={() => setOpen(false)}>
+          <Link href="/" onClick={() => setOpen(false)}>
             Inicio
           </Link>
-          <Link href="#servicios" onClick={() => setOpen(false)}>
+          <Link href="/#servicios" onClick={() => setOpen(false)}>
             Servicios
           </Link>
-          <Link href="#nosotros" onClick={() => setOpen(false)}>
+          <Link href="/#nosotros" onClick={() => setOpen(false)}>
             Nosotros
           </Link>
           <Link href="/blog" onClick={() => setOpen(false)}>
             Blog
           </Link>
-          <Link href="#contacto" onClick={() => setOpen(false)}>
+          <Link href="/#contacto" onClick={() => setOpen(false)}>
             Contacto
           </Link>
 
