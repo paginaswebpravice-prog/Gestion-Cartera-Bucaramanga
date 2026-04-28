@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "../Landing.module.css";
+import styles from "../../styles/Landing.module.css";
 import Link from "next/link";
 
 export default function CobranzaConstruccionContent() {

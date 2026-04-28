@@ -14,18 +14,16 @@ function handleClick() {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [sectorsOpen, setSectorsOpen] = useState(false);
 
   return (
     <nav className={styles.navbar}>
-      {/* Logo */}
+      {/* LOGO */}
       <div className={styles.left}>
         <div className={styles.logoWrapper}>
           <Link href="/">
             <Image
               src="/logo_pravice.png"
-              alt="Pravice - Gestión y cobro de cartera"
+              alt="Pravice"
               fill
               priority
               style={{ objectFit: "contain" }}
@@ -41,51 +39,39 @@ export default function Navbar() {
         </li>
 
         {/* SERVICIOS */}
-        <li
-          className={styles.dropdown}
-          onMouseEnter={() => setServicesOpen(true)}
-          onMouseLeave={() => setServicesOpen(false)}
-        >
+        <li className={styles.dropdown}>
           <span>Servicios ▾</span>
 
-          {servicesOpen && (
-            <div className={styles.dropdownMenu}>
-              <Link href="/servicios/cobro-juridico-bucaramanga">
-                Cobro jurídico
-              </Link>
-              <Link href="/servicios/cobro-prejuridico-bucaramanga">
-                Cobro prejurídico
-              </Link>
-              <Link href="/servicios/recuperacion-cartera">
-                Recuperación de cartera
-              </Link>
-              <Link href="/servicios/cobranza-empresas">
-                Cobranza para empresas
-              </Link>
-              <Link href="/servicios/negociacion-deudas">
-                Negociación de deudas
-              </Link>
-            </div>
-          )}
+          <div className={styles.dropdownMenu}>
+            <Link href="/servicios/cobro-juridico-bucaramanga">
+              Cobro jurídico
+            </Link>
+            <Link href="/servicios/cobro-prejuridico-bucaramanga">
+              Cobro prejurídico
+            </Link>
+            <Link href="/servicios/recuperacion-cartera">
+              Recuperación de cartera
+            </Link>
+            <Link href="/servicios/cobranza-empresas">
+              Cobranza para empresas
+            </Link>
+            <Link href="/servicios/negociacion-deudas">
+              Negociación de deudas
+            </Link>
+          </div>
         </li>
 
         {/* SECTORES */}
-        <li
-          className={styles.dropdown}
-          onMouseEnter={() => setSectorsOpen(true)}
-          onMouseLeave={() => setSectorsOpen(false)}
-        >
+        <li className={styles.dropdown}>
           <span>Sectores ▾</span>
 
-          {sectorsOpen && (
-            <div className={styles.dropdownMenu}>
-              <Link href="/sectores/cobranza-clinicas">Clínicas y salud</Link>
-              <Link href="/sectores/cobranza-inmobiliarias">Inmobiliarias</Link>
-              <Link href="/sectores/cobranza-construccion">Construcción</Link>
-              <Link href="/sectores/cobranza-pymes">PYMES</Link>
-              <Link href="/sectores/cobranza-educacion">Educación</Link>
-            </div>
-          )}
+          <div className={styles.dropdownMenu}>
+            <Link href="/sectores/cobranza-clinicas">Clínicas y salud</Link>
+            <Link href="/sectores/cobranza-inmobiliarias">Inmobiliarias</Link>
+            <Link href="/sectores/cobranza-construccion">Construcción</Link>
+            <Link href="/sectores/cobranza-pymes">PYMES</Link>
+            <Link href="/sectores/cobranza-educacion">Educación</Link>
+          </div>
         </li>
 
         <li>
@@ -97,7 +83,7 @@ export default function Navbar() {
         </li>
       </ul>
 
-      {/* CTA + MOBILE */}
+      {/* RIGHT */}
       <div className={styles.right}>
         <button className={styles.cta} onClick={handleClick}>
           Recuperar cartera
@@ -108,7 +94,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE */}
       {open && (
         <div className={styles.mobileMenu}>
           <Link href="/" onClick={() => setOpen(false)}>
