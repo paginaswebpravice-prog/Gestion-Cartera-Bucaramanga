@@ -8,13 +8,22 @@ export default function CobranzaEmpresasContent() {
     <main className={styles.container}>
       {/* HERO */}
       <section className={styles.hero}>
-        <h1>Cobranza para empresas en Colombia: mejore su flujo de caja</h1>
+        <h1>
+          Cobranza para empresas en Colombia: recupere cartera y mejore su flujo
+          de caja
+        </h1>
         <div className={styles.heroLine}></div>
 
         <p>
-          Ayudamos a empresas a optimizar la gestión de cartera y recuperar
-          deudas mediante estrategias de cobranza eficientes, seguimiento
-          continuo y procesos legales cuando es necesario.
+          Ayudamos a empresas a recuperar cartera vencida mediante estrategias
+          de cobranza prejurídica y jurídica, optimizando su flujo de caja y
+          reduciendo el impacto de clientes morosos en su operación.
+        </p>
+
+        <p>
+          Nuestro enfoque combina gestión estratégica, seguimiento constante y
+          respaldo legal para maximizar la recuperación de deudas empresariales
+          en el menor tiempo posible.
         </p>
 
         <Link href="/contacto" className={styles.ctaButton}>
@@ -27,136 +36,205 @@ export default function CobranzaEmpresasContent() {
         <div className={styles.serviceCard}>
           <h3>Gestión integral de cartera</h3>
           <p>
-            Administramos todo el proceso de cobranza para mejorar la
-            recuperación.
+            Administramos todo el ciclo de cobranza, desde la identificación de
+            deudas hasta la recuperación efectiva del dinero.
           </p>
         </div>
 
         <div className={styles.serviceCard}>
           <h3>Cobranza prejurídica</h3>
           <p>
-            Recuperamos deudas mediante negociación sin necesidad de demanda.
+            Recuperamos cartera mediante contacto estratégico y negociación,
+            evitando procesos judiciales innecesarios.
           </p>
         </div>
 
         <div className={styles.serviceCard}>
           <h3>Cobranza jurídica</h3>
-          <p>Iniciamos procesos legales para asegurar el pago de la deuda.</p>
+          <p>
+            Iniciamos procesos legales para exigir el pago cuando el deudor no
+            responde a la gestión inicial.
+          </p>
         </div>
 
         <div className={styles.serviceCard}>
           <h3>Reportes y seguimiento</h3>
-          <p>Información clara y constante sobre el estado de cada caso.</p>
+          <p>
+            Información clara, periódica y detallada sobre el estado de cada
+            caso.
+          </p>
         </div>
       </section>
 
-      {/* CONTENIDO SEO */}
+      {/* PROBLEMA REAL */}
       <section className={styles.section}>
-        <h2>¿Por qué es importante la cobranza para empresas?</h2>
+        <h2>El impacto de la cartera vencida en las empresas</h2>
 
         <p>
-          La cobranza es un proceso clave para mantener la liquidez de cualquier
-          empresa. Una mala gestión de cartera puede generar problemas de flujo
-          de caja y limitar el crecimiento del negocio.
+          La cartera vencida es uno de los principales problemas financieros en
+          las empresas en Colombia. Cuando los clientes no pagan a tiempo, se
+          genera un efecto en cadena que afecta la liquidez, la operación y la
+          capacidad de crecimiento del negocio.
         </p>
 
         <p>
-          En Colombia, muchas empresas enfrentan dificultades debido a clientes
-          morosos. Contar con un sistema de cobranza eficiente permite reducir
-          estos riesgos y mejorar la estabilidad financiera.
+          Muchas empresas continúan operando con altos niveles de morosidad sin
+          implementar estrategias de recuperación efectivas, lo que termina
+          afectando su rentabilidad.
+        </p>
+
+        <p>
+          Una correcta gestión de cobranza permite convertir cuentas por cobrar
+          en flujo de caja real, mejorando la estabilidad financiera.
         </p>
       </section>
 
+      {/* COMO TRABAJAN */}
       <section className={styles.section}>
-        <h2>Cómo optimizamos la cobranza empresarial</h2>
+        <h2>Cómo funciona nuestro servicio de cobranza empresarial</h2>
 
         <p>
-          Nuestro enfoque combina tecnología, estrategia y experiencia legal
-          para maximizar la recuperación de cartera.
+          Nuestro proceso está diseñado para maximizar la recuperación de
+          cartera mediante un enfoque estructurado y estratégico.
         </p>
 
         <ul>
-          <li>Segmentación de cartera por riesgo</li>
-          <li>Estrategias de contacto efectivas</li>
-          <li>Negociación personalizada</li>
-          <li>Escalamiento a procesos legales</li>
+          <li>Análisis inicial de la cartera y clasificación de deudas</li>
+          <li>Segmentación por nivel de riesgo y antigüedad</li>
+          <li>Contactos estratégicos con los deudores</li>
+          <li>Negociación de acuerdos de pago</li>
+          <li>Seguimiento constante de compromisos</li>
+          <li>Escalamiento a cobro jurídico si es necesario</li>
+        </ul>
+
+        <p>
+          Este enfoque permite aumentar significativamente la tasa de
+          recuperación frente a métodos tradicionales.
+        </p>
+      </section>
+
+      {/* DIFERENCIAL */}
+      <section className={styles.section}>
+        <h2>¿Qué nos diferencia de otras empresas de cobranza?</h2>
+
+        <p>
+          No solo gestionamos cobros, implementamos una estrategia completa
+          enfocada en resultados.
+        </p>
+
+        <ul>
+          <li>Enfoque en recuperación real, no solo gestión</li>
+          <li>Comunicación efectiva con deudores</li>
+          <li>Equipo con experiencia legal y financiera</li>
+          <li>Procesos adaptados a cada empresa</li>
         </ul>
       </section>
 
+      {/* BENEFICIOS */}
       <section className={styles.section}>
-        <h2>Beneficios para su empresa</h2>
+        <h2>Beneficios de una cobranza profesional</h2>
+
+        <p>
+          Contar con un servicio especializado de cobranza genera ventajas
+          competitivas importantes:
+        </p>
 
         <ul>
-          <li>Mejora del flujo de caja</li>
+          <li>Mejora inmediata del flujo de caja</li>
           <li>Reducción de cartera vencida</li>
+          <li>Optimización de recursos internos</li>
           <li>Mayor control financiero</li>
-          <li>Ahorro de tiempo y recursos internos</li>
+          <li>Disminución del riesgo de pérdidas</li>
         </ul>
       </section>
 
+      {/* TIPOS */}
       <section className={styles.section}>
-        <h2>Tipos de cartera que gestionamos</h2>
+        <h2>Tipos de cartera empresarial que gestionamos</h2>
 
         <p>
-          Trabajamos con diferentes tipos de cartera según el sector y la
-          naturaleza de la deuda:
+          Trabajamos con diferentes tipos de cartera según el sector y el tipo
+          de cliente:
         </p>
 
         <ul>
           <li>Cartera comercial</li>
-          <li>Cartera financiera</li>
           <li>Cartera de servicios</li>
-          <li>Cartera empresarial B2B</li>
+          <li>Cartera financiera</li>
+          <li>Cartera B2B (empresa a empresa)</li>
+          <li>Cartera de clientes recurrentes</li>
         </ul>
       </section>
 
+      {/* CUANDO */}
       <section className={styles.section}>
-        <h2>¿Cuándo tercerizar la cobranza?</h2>
+        <h2>¿Cuándo es el momento ideal para iniciar la cobranza?</h2>
 
         <p>
-          Muchas empresas deciden externalizar la cobranza cuando su equipo
-          interno no logra recuperar deudas o cuando el volumen de cartera
-          vencida crece.
+          Muchas empresas cometen el error de esperar demasiado tiempo antes de
+          iniciar la gestión de cobro.
         </p>
 
         <p>
-          Externalizar permite acceder a experiencia especializada y mejorar
-          resultados en menor tiempo.
+          Lo recomendable es actuar desde el primer incumplimiento de pago, ya
+          que esto aumenta significativamente las probabilidades de
+          recuperación.
         </p>
       </section>
 
+      {/* CASOS */}
       <section className={styles.section}>
-        <h2>Preguntas frecuentes</h2>
+        <h2>Casos comunes de cobranza empresarial</h2>
+
+        <ul>
+          <li>Clientes que retrasan pagos constantemente</li>
+          <li>Empresas que incumplen contratos</li>
+          <li>Facturas vencidas sin respuesta</li>
+          <li>Deudas acumuladas difíciles de recuperar</li>
+        </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className={styles.section}>
+        <h2>Preguntas frecuentes sobre cobranza empresarial</h2>
 
         <div className={styles.faqItem}>
-          <h3>¿Qué porcentaje de recuperación se puede lograr?</h3>
+          <h3>¿Se puede recuperar una deuda antigua?</h3>
           <p>
-            Depende del caso, pero una estrategia profesional aumenta
-            significativamente la tasa de éxito.
+            Sí, aunque entre más tiempo pase, más difícil puede ser. Por eso es
+            importante actuar rápidamente.
           </p>
         </div>
 
         <div className={styles.faqItem}>
-          <h3>¿Se puede recuperar sin demandar?</h3>
-          <p>Sí, muchos casos se resuelven en etapa prejurídica.</p>
+          <h3>¿Siempre es necesario demandar?</h3>
+          <p>
+            No, muchos casos se resuelven en etapa prejurídica mediante
+            negociación.
+          </p>
         </div>
 
         <div className={styles.faqItem}>
-          <h3>¿Qué pasa si el deudor no paga?</h3>
-          <p>Se puede escalar a un proceso jurídico para exigir el pago.</p>
+          <h3>¿Cuánto tarda recuperar una deuda?</h3>
+          <p>Depende del caso, pero puede variar entre semanas y meses.</p>
+        </div>
+
+        <div className={styles.faqItem}>
+          <h3>¿Qué pasa si el deudor no responde?</h3>
+          <p>Se procede con acciones legales para exigir el pago.</p>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA FINAL */}
       <section className={styles.ctaBox}>
-        <h2>Optimice la cobranza de su empresa</h2>
+        <h2>Recupere su cartera y fortalezca su empresa</h2>
         <p>
-          Mejore su flujo de caja y reduzca su cartera vencida con un equipo
-          experto en cobranza empresarial.
+          No permita que los clientes morosos afecten su negocio. Optimice su
+          cobranza con expertos y obtenga resultados reales.
         </p>
 
         <Link href="/contacto" className={styles.ctaButton}>
-          Hablar con un asesor
+          Hablar con un especialista
         </Link>
       </section>
     </main>

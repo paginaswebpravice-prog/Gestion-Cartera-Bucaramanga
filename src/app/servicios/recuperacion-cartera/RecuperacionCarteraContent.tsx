@@ -9,15 +9,21 @@ export default function RecuperacionCarteraContent() {
       {/* HERO */}
       <section className={styles.hero}>
         <h1>
-          Recuperación de cartera en Colombia: soluciones efectivas para
-          empresas
+          Recuperación de cartera en Colombia: aumente su flujo de caja y
+          reduzca la morosidad
         </h1>
         <div className={styles.heroLine}></div>
 
         <p>
-          Ayudamos a empresas y personas a recuperar cartera vencida mediante
-          estrategias de cobranza prejurídica, negociación de deudas y procesos
-          jurídicos efectivos en toda Colombia.
+          Ofrecemos servicios especializados de recuperación de cartera en
+          Colombia para empresas y personas que necesitan recuperar deudas de
+          manera efectiva, rápida y legal.
+        </p>
+
+        <p>
+          Implementamos estrategias de cobranza prejurídica, negociación y cobro
+          jurídico para maximizar la recuperación y reducir el impacto de la
+          cartera vencida en su negocio.
         </p>
 
         <Link href="/contacto" className={styles.ctaButton}>
@@ -30,65 +36,87 @@ export default function RecuperacionCarteraContent() {
         <div className={styles.serviceCard}>
           <h3>Cobro prejurídico</h3>
           <p>
-            Recuperamos deudas sin necesidad de demanda mediante negociación
-            estratégica.
+            Recuperamos deudas mediante negociación estratégica sin necesidad de
+            demanda.
           </p>
         </div>
 
         <div className={styles.serviceCard}>
           <h3>Cobro jurídico</h3>
           <p>
-            Iniciamos procesos legales para recuperar cartera cuando el deudor
-            no responde.
+            Iniciamos procesos legales para exigir el pago cuando el deudor no
+            responde.
           </p>
         </div>
 
         <div className={styles.serviceCard}>
-          <h3>Gestión de cartera</h3>
+          <h3>Gestión integral de cartera</h3>
           <p>
-            Administramos el proceso completo de cobranza con seguimiento
-            constante.
+            Administramos todo el proceso de cobranza con seguimiento continuo.
           </p>
         </div>
 
         <div className={styles.serviceCard}>
           <h3>Negociación de deudas</h3>
           <p>
-            Diseñamos acuerdos de pago efectivos para recuperar dinero
-            rápidamente.
+            Diseñamos acuerdos efectivos que facilitan la recuperación del
+            dinero.
           </p>
         </div>
       </section>
 
-      {/* CONTENIDO SEO FUERTE */}
+      {/* DEFINICIÓN */}
       <section className={styles.section}>
         <h2>¿Qué es la recuperación de cartera?</h2>
 
         <p>
-          La recuperación de cartera es el proceso mediante el cual una empresa
-          o persona busca recuperar dinero adeudado por clientes morosos. Este
-          proceso puede incluir diferentes etapas, desde la negociación directa
-          hasta acciones legales.
+          La recuperación de cartera es el conjunto de estrategias utilizadas
+          para recuperar dinero adeudado por clientes, ya sean empresas o
+          personas, que han incumplido sus obligaciones de pago.
         </p>
 
         <p>
-          En Colombia, la gestión adecuada de cartera es clave para mantener la
-          liquidez de las empresas y evitar problemas financieros derivados de
-          pagos atrasados.
+          Este proceso incluye diferentes etapas que van desde la gestión
+          preventiva hasta acciones legales, dependiendo del comportamiento del
+          deudor y del tiempo de mora.
         </p>
 
         <p>
-          Un proceso profesional permite no solo recuperar dinero, sino también
-          optimizar la relación con los clientes y reducir riesgos futuros.
+          En Colombia, una adecuada gestión de cartera es fundamental para
+          garantizar la estabilidad financiera de las empresas y evitar pérdidas
+          económicas.
         </p>
       </section>
 
+      {/* PROBLEMA */}
+      <section className={styles.section}>
+        <h2>El impacto de la cartera vencida en las empresas</h2>
+
+        <p>
+          La acumulación de cartera vencida es uno de los principales problemas
+          financieros que enfrentan las empresas en Colombia.
+        </p>
+
+        <ul>
+          <li>Disminución del flujo de caja</li>
+          <li>Falta de liquidez para operar</li>
+          <li>Incremento del riesgo financiero</li>
+          <li>Pérdida de rentabilidad</li>
+        </ul>
+
+        <p>
+          Sin una estrategia efectiva de cobranza, estos problemas pueden
+          escalar rápidamente y afectar la sostenibilidad del negocio.
+        </p>
+      </section>
+
+      {/* ETAPAS */}
       <section className={styles.section}>
         <h2>Etapas de la recuperación de cartera</h2>
 
         <p>
-          La recuperación de cartera se divide en varias etapas que aumentan
-          progresivamente el nivel de presión sobre el deudor.
+          El proceso de recuperación se divide en varias fases que aumentan el
+          nivel de intervención:
         </p>
 
         <ul>
@@ -97,57 +125,112 @@ export default function RecuperacionCarteraContent() {
             vencimiento.
           </li>
           <li>
-            <strong>Cobro prejurídico:</strong> negociación sin demanda.
+            <strong>Cobro prejurídico:</strong> negociación directa sin demanda.
           </li>
           <li>
-            <strong>Cobro jurídico:</strong> procesos legales y embargos.
+            <strong>Cobro jurídico:</strong> acciones legales y embargos.
           </li>
         </ul>
 
         <p>
-          Cada etapa se aplica dependiendo del comportamiento del deudor y del
-          tiempo de mora.
+          Aplicar correctamente cada etapa permite aumentar la probabilidad de
+          recuperación.
         </p>
       </section>
 
+      {/* PROCESO */}
       <section className={styles.section}>
-        <h2>¿Por qué es importante recuperar cartera a tiempo?</h2>
+        <h2>Cómo funciona nuestro proceso de recuperación</h2>
 
         <p>
-          La falta de recuperación de cartera puede afectar directamente el
-          flujo de caja, limitar el crecimiento empresarial y generar pérdidas
-          económicas importantes.
+          Nuestro enfoque está diseñado para maximizar resultados mediante una
+          metodología estructurada:
         </p>
 
+        <ul>
+          <li>Análisis detallado de la cartera</li>
+          <li>Clasificación de deudas por riesgo</li>
+          <li>Contactos estratégicos con deudores</li>
+          <li>Negociación de acuerdos de pago</li>
+          <li>Seguimiento constante</li>
+          <li>Escalamiento a cobro jurídico si es necesario</li>
+        </ul>
+
         <p>
-          Actuar a tiempo permite aumentar las probabilidades de éxito y reducir
-          el riesgo de incobrabilidad.
+          Este proceso permite mejorar significativamente la tasa de
+          recuperación.
         </p>
       </section>
 
+      {/* TIPOS */}
       <section className={styles.section}>
-        <h2>Beneficios de trabajar con expertos</h2>
+        <h2>Tipos de cartera que gestionamos</h2>
+
+        <ul>
+          <li>Cartera empresarial (B2B)</li>
+          <li>Cartera comercial</li>
+          <li>Cartera de servicios</li>
+          <li>Cartera financiera</li>
+          <li>Cartera personal</li>
+        </ul>
+      </section>
+
+      {/* BENEFICIOS */}
+      <section className={styles.section}>
+        <h2>Beneficios de una gestión profesional de cartera</h2>
 
         <ul>
           <li>Mayor tasa de recuperación</li>
-          <li>Estrategias legales efectivas</li>
-          <li>Reducción de tiempos</li>
-          <li>Seguimiento profesional</li>
+          <li>Reducción de cartera vencida</li>
+          <li>Mejor flujo de caja</li>
+          <li>Optimización de recursos internos</li>
+          <li>Mayor control financiero</li>
         </ul>
       </section>
 
+      {/* CUANDO */}
       <section className={styles.section}>
-        <h2>¿Cuándo iniciar un proceso de cobro?</h2>
+        <h2>¿Cuándo iniciar la recuperación de cartera?</h2>
 
         <p>
-          Se recomienda iniciar acciones de cobranza inmediatamente después del
-          incumplimiento del pago, evitando que la deuda se vuelva más difícil
-          de recuperar.
+          Lo recomendable es iniciar el proceso desde el primer incumplimiento
+          de pago. Entre más tiempo pase, menor será la probabilidad de
+          recuperar la deuda.
         </p>
       </section>
 
+      {/* ERRORES */}
       <section className={styles.section}>
-        <h2>Preguntas frecuentes</h2>
+        <h2>Errores comunes en la gestión de cartera</h2>
+
+        <ul>
+          <li>No hacer seguimiento a clientes morosos</li>
+          <li>Esperar demasiado tiempo para cobrar</li>
+          <li>No contar con estrategias claras</li>
+          <li>No utilizar respaldo legal cuando es necesario</li>
+        </ul>
+      </section>
+
+      {/* DIFERENCIAL */}
+      <section className={styles.section}>
+        <h2>¿Por qué contratar un servicio especializado?</h2>
+
+        <p>
+          Contar con expertos en recuperación de cartera permite aumentar las
+          probabilidades de éxito y reducir riesgos financieros.
+        </p>
+
+        <ul>
+          <li>Estrategias profesionales de cobranza</li>
+          <li>Mayor efectividad en negociación</li>
+          <li>Respaldo legal en cada etapa</li>
+          <li>Procesos estructurados y medibles</li>
+        </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className={styles.section}>
+        <h2>Preguntas frecuentes sobre recuperación de cartera</h2>
 
         <div className={styles.faqItem}>
           <h3>¿Cuánto tarda recuperar una deuda?</h3>
@@ -163,14 +246,22 @@ export default function RecuperacionCarteraContent() {
           <h3>¿Qué pasa si el deudor no paga?</h3>
           <p>Se puede iniciar un proceso jurídico para exigir el pago.</p>
         </div>
+
+        <div className={styles.faqItem}>
+          <h3>¿Qué tan efectiva es la recuperación?</h3>
+          <p>
+            Depende del caso, pero una estrategia profesional aumenta
+            significativamente las probabilidades de éxito.
+          </p>
+        </div>
       </section>
 
-      {/* CTA FINAL */}
+      {/* CTA */}
       <section className={styles.ctaBox}>
-        <h2>Recupere su dinero hoy</h2>
+        <h2>Recupere su cartera y fortalezca su negocio</h2>
         <p>
-          Nuestro equipo está listo para ayudarle a recuperar su cartera de
-          forma rápida, efectiva y legal.
+          No permita que la morosidad afecte su empresa. Nuestro equipo está
+          listo para ayudarle a recuperar su dinero de forma efectiva.
         </p>
 
         <Link href="/contacto" className={styles.ctaButton}>

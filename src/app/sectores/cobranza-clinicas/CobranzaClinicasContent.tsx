@@ -8,13 +8,22 @@ export default function CobranzaClinicasContent() {
     <main className={styles.container}>
       {/* HERO */}
       <section className={styles.hero}>
-        <h1>Cobranza para clínicas y sector salud en Colombia</h1>
+        <h1>
+          Cobranza para clínicas y sector salud en Colombia: recupere cartera de
+          EPS y pacientes
+        </h1>
         <div className={styles.heroLine}></div>
 
         <p>
-          Ayudamos a clínicas, hospitales y empresas del sector salud a
-          recuperar cartera vencida de EPS, aseguradoras y pacientes mediante
-          estrategias especializadas y procesos legales efectivos.
+          Ayudamos a clínicas, hospitales, IPS y empresas del sector salud a
+          recuperar cartera vencida con EPS, aseguradoras y pacientes mediante
+          estrategias especializadas de cobranza, auditoría y procesos legales.
+        </p>
+
+        <p>
+          Optimice su flujo de caja, reduzca glosas y mejore la recuperación de
+          cuentas médicas con un enfoque profesional adaptado al sistema de
+          salud colombiano.
         </p>
 
         <Link href="/contacto" className={styles.ctaButton}>
@@ -27,105 +36,196 @@ export default function CobranzaClinicasContent() {
         <div className={styles.serviceCard}>
           <h3>Cobranza a EPS</h3>
           <p>
-            Gestión de cobro de cuentas médicas pendientes con entidades de
-            salud.
+            Gestión especializada de cuentas médicas pendientes con entidades
+            promotoras de salud.
           </p>
         </div>
 
         <div className={styles.serviceCard}>
           <h3>Recuperación de cartera hospitalaria</h3>
           <p>
-            Estrategias para recuperar pagos de servicios médicos prestados.
+            Estrategias para recuperar pagos de servicios médicos prestados y
+            facturados.
           </p>
         </div>
 
         <div className={styles.serviceCard}>
-          <h3>Gestión de glosas</h3>
-          <p>Apoyo en la recuperación de valores rechazados o pendientes.</p>
+          <h3>Gestión y levantamiento de glosas</h3>
+          <p>
+            Recuperación de valores rechazados mediante auditoría y sustentación
+            técnica.
+          </p>
         </div>
 
         <div className={styles.serviceCard}>
           <h3>Cobranza a pacientes</h3>
           <p>
-            Recuperación de pagos pendientes de usuarios de servicios de salud.
+            Recuperación de pagos pendientes de usuarios particulares y copagos.
           </p>
         </div>
       </section>
 
-      {/* CONTENIDO SEO */}
+      {/* PROBLEMA REAL */}
       <section className={styles.section}>
-        <h2>Problemas de cartera en el sector salud</h2>
+        <h2>El problema de cartera en el sector salud en Colombia</h2>
 
         <p>
-          El sector salud en Colombia enfrenta uno de los mayores niveles de
-          cartera vencida, especialmente en relaciones con EPS, aseguradoras y
-          pacientes.
+          El sector salud es uno de los más afectados por la acumulación de
+          cartera vencida debido a retrasos en pagos, procesos administrativos
+          complejos y altos niveles de glosas por parte de las EPS.
         </p>
 
         <p>
-          Los retrasos en pagos, glosas y procesos administrativos generan un
-          impacto directo en la liquidez de clínicas y hospitales.
-        </p>
-
-        <p>
-          Una gestión adecuada de cobranza permite recuperar recursos esenciales
-          para la operación y crecimiento de las instituciones de salud.
-        </p>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Cómo optimizamos la cobranza en clínicas</h2>
-
-        <p>
-          Nuestro enfoque combina conocimiento del sector salud con estrategias
-          legales y financieras para maximizar la recuperación de cartera.
+          Las clínicas y hospitales enfrentan dificultades constantes para
+          recuperar pagos de servicios ya prestados, lo que impacta directamente
+          su liquidez y capacidad operativa.
         </p>
 
         <ul>
-          <li>Identificación de cuentas críticas</li>
-          <li>Gestión especializada con EPS</li>
-          <li>Recuperación de glosas</li>
-          <li>Escalamiento a cobro jurídico</li>
+          <li>Retrasos en pagos por parte de EPS</li>
+          <li>Alto volumen de glosas</li>
+          <li>Procesos de auditoría complejos</li>
+          <li>Facturación rechazada o pendiente</li>
+          <li>Cartera acumulada difícil de gestionar internamente</li>
+        </ul>
+
+        <p>
+          Sin una estrategia especializada, esta cartera puede volverse
+          incobrable con el tiempo.
+        </p>
+      </section>
+
+      {/* GLOSAS */}
+      <section className={styles.section}>
+        <h2>Gestión de glosas: clave para recuperar ingresos</h2>
+
+        <p>
+          Las glosas representan uno de los mayores obstáculos en la
+          recuperación de cartera en salud. Muchas veces, valores importantes
+          quedan retenidos por inconsistencias administrativas o auditorías.
+        </p>
+
+        <p>
+          Nuestro servicio incluye la revisión, sustentación y gestión de glosas
+          para lograr su levantamiento y recuperar los valores correspondientes.
+        </p>
+
+        <ul>
+          <li>Revisión técnica de glosas</li>
+          <li>Respuesta a auditorías</li>
+          <li>Soporte documental</li>
+          <li>Seguimiento hasta recuperación</li>
         </ul>
       </section>
 
+      {/* PROCESO */}
       <section className={styles.section}>
-        <h2>Beneficios para clínicas y hospitales</h2>
+        <h2>Cómo funciona nuestro proceso de cobranza en salud</h2>
+
+        <p>
+          Implementamos un proceso estructurado enfocado en maximizar la
+          recuperación:
+        </p>
+
+        <ul>
+          <li>Análisis de cartera y clasificación por riesgo</li>
+          <li>Revisión de facturación y soportes</li>
+          <li>Gestión directa con EPS y aseguradoras</li>
+          <li>Negociación de pagos</li>
+          <li>Seguimiento constante</li>
+          <li>Escalamiento a cobro jurídico si es necesario</li>
+        </ul>
+
+        <p>
+          Este enfoque permite mejorar significativamente los tiempos y
+          resultados.
+        </p>
+      </section>
+
+      {/* BENEFICIOS */}
+      <section className={styles.section}>
+        <h2>Beneficios de una cobranza especializada en salud</h2>
 
         <ul>
           <li>Mejora del flujo de caja</li>
           <li>Reducción de cartera vencida</li>
-          <li>Optimización de procesos internos</li>
+          <li>Recuperación de glosas</li>
+          <li>Optimización de procesos administrativos</li>
           <li>Mayor control financiero</li>
         </ul>
       </section>
 
+      {/* TIPOS */}
       <section className={styles.section}>
         <h2>Tipos de cartera que gestionamos</h2>
 
         <ul>
           <li>Cartera con EPS</li>
-          <li>Cartera de pacientes particulares</li>
           <li>Cartera con aseguradoras</li>
+          <li>Cartera de pacientes particulares</li>
           <li>Cartera hospitalaria</li>
+          <li>Cartera de servicios médicos especializados</li>
         </ul>
       </section>
 
+      {/* CUANDO */}
       <section className={styles.section}>
-        <h2>Preguntas frecuentes</h2>
+        <h2>¿Cuándo tercerizar la cobranza en clínicas?</h2>
+
+        <p>
+          Es recomendable cuando la cartera vencida comienza a afectar la
+          operación o cuando los procesos internos no logran recuperar los
+          pagos.
+        </p>
+
+        <p>
+          Externalizar permite acceder a experiencia especializada y mejorar los
+          resultados.
+        </p>
+      </section>
+
+      {/* DIFERENCIAL */}
+      <section className={styles.section}>
+        <h2>¿Por qué elegir un servicio especializado en salud?</h2>
+
+        <p>
+          La cobranza en el sector salud requiere conocimiento técnico del
+          sistema, normativas y procesos administrativos específicos.
+        </p>
+
+        <ul>
+          <li>Conocimiento del sistema de salud colombiano</li>
+          <li>Experiencia con EPS y auditorías</li>
+          <li>Manejo de glosas y facturación</li>
+          <li>Estrategias legales especializadas</li>
+        </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className={styles.section}>
+        <h2>Preguntas frecuentes sobre cobranza en clínicas</h2>
 
         <div className={styles.faqItem}>
           <h3>¿Se pueden recuperar glosas?</h3>
           <p>
-            Sí, mediante procesos adecuados se pueden recuperar valores
-            rechazados.
+            Sí, mediante procesos técnicos y administrativos adecuados se pueden
+            recuperar valores rechazados.
+          </p>
+        </div>
+
+        <div className={styles.faqItem}>
+          <h3>¿Cuánto tarda el proceso?</h3>
+          <p>
+            Depende del caso, pero puede variar según la entidad y el tipo de
+            deuda.
           </p>
         </div>
 
         <div className={styles.faqItem}>
           <h3>¿Se puede cobrar a EPS?</h3>
           <p>
-            Sí, existen mecanismos legales y administrativos para exigir pagos.
+            Sí, existen mecanismos administrativos y legales para exigir el
+            pago.
           </p>
         </div>
 
@@ -137,10 +237,10 @@ export default function CobranzaClinicasContent() {
 
       {/* CTA */}
       <section className={styles.ctaBox}>
-        <h2>Recupere su cartera en el sector salud</h2>
+        <h2>Optimice la recuperación de cartera en su clínica</h2>
         <p>
-          Optimice su flujo de caja y reduzca su cartera vencida con expertos en
-          cobranza médica.
+          Mejore su liquidez y reduzca su cartera vencida con un servicio
+          especializado en el sector salud.
         </p>
 
         <Link href="/contacto" className={styles.ctaButton}>
