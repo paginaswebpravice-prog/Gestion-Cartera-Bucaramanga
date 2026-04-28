@@ -14,77 +14,124 @@ function handleClick() {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [sectorsOpen, setSectorsOpen] = useState(false);
 
   return (
-    <nav className={styles.navbar} aria-label="Navegación principal">
+    <nav className={styles.navbar}>
       {/* Logo */}
       <div className={styles.left}>
         <div className={styles.logoWrapper}>
           <Link href="/">
             <Image
               src="/logo_pravice.png"
-              alt="Pravice - Gestión y cobro de cartera en Colombia"
+              alt="Pravice - Gestión y cobro de cartera"
               fill
               priority
-              sizes="(max-width: 768px) 120px, 160px"
               style={{ objectFit: "contain" }}
             />
           </Link>
         </div>
       </div>
 
-      {/* Menú desktop */}
+      {/* MENU DESKTOP */}
       <ul className={styles.center}>
         <li>
           <Link href="/">Inicio</Link>
         </li>
-        <li>
-          <Link href="/#servicios">Servicios</Link>
+
+        {/* SERVICIOS */}
+        <li
+          className={styles.dropdown}
+          onMouseEnter={() => setServicesOpen(true)}
+          onMouseLeave={() => setServicesOpen(false)}
+        >
+          <span>Servicios ▾</span>
+
+          {servicesOpen && (
+            <div className={styles.dropdownMenu}>
+              <Link href="/servicios/cobro-juridico-bucaramanga">
+                Cobro jurídico
+              </Link>
+              <Link href="/servicios/cobro-prejuridico-bucaramanga">
+                Cobro prejurídico
+              </Link>
+              <Link href="/servicios/recuperacion-cartera">
+                Recuperación de cartera
+              </Link>
+              <Link href="/servicios/cobranza-empresas">
+                Cobranza para empresas
+              </Link>
+              <Link href="/servicios/negociacion-deudas">
+                Negociación de deudas
+              </Link>
+            </div>
+          )}
         </li>
-        <li>
-          <Link href="/#nosotros">Nosotros</Link>
+
+        {/* SECTORES */}
+        <li
+          className={styles.dropdown}
+          onMouseEnter={() => setSectorsOpen(true)}
+          onMouseLeave={() => setSectorsOpen(false)}
+        >
+          <span>Sectores ▾</span>
+
+          {sectorsOpen && (
+            <div className={styles.dropdownMenu}>
+              <Link href="/sectores/cobranza-clinicas">Clínicas y salud</Link>
+              <Link href="/sectores/cobranza-inmobiliarias">Inmobiliarias</Link>
+              <Link href="/sectores/cobranza-construccion">Construcción</Link>
+              <Link href="/sectores/cobranza-pymes">PYMES</Link>
+              <Link href="/sectores/cobranza-educacion">Educación</Link>
+            </div>
+          )}
         </li>
+
         <li>
           <Link href="/blog">Blog</Link>
         </li>
+
         <li>
-          <Link href="/#contacto">Contacto</Link>
+          <Link href="/contacto">Contacto</Link>
         </li>
       </ul>
 
-      {/* CTA + Hamburger */}
+      {/* CTA + MOBILE */}
       <div className={styles.right}>
         <button className={styles.cta} onClick={handleClick}>
-          Asesoría en cobro de cartera
+          Recuperar cartera
         </button>
 
-        <button
-          className={styles.menuButton}
-          onClick={() => setOpen(!open)}
-          aria-label="Abrir menú"
-        >
+        <button className={styles.menuButton} onClick={() => setOpen(!open)}>
           ☰
         </button>
       </div>
 
-      {/* Menú mobile */}
+      {/* MOBILE MENU */}
       {open && (
         <div className={styles.mobileMenu}>
           <Link href="/" onClick={() => setOpen(false)}>
             Inicio
           </Link>
-          <Link href="/#servicios" onClick={() => setOpen(false)}>
-            Servicios
+
+          <p className={styles.mobileTitle}>Servicios</p>
+          <Link href="/servicios/cobro-juridico-bucaramanga">
+            Cobro jurídico
           </Link>
-          <Link href="/#nosotros" onClick={() => setOpen(false)}>
-            Nosotros
+          <Link href="/servicios/cobro-prejuridico-bucaramanga">
+            Cobro prejurídico
           </Link>
-          <Link href="/blog" onClick={() => setOpen(false)}>
-            Blog
+          <Link href="/servicios/recuperacion-cartera">
+            Recuperación de cartera
           </Link>
-          <Link href="/#contacto" onClick={() => setOpen(false)}>
-            Contacto
-          </Link>
+
+          <p className={styles.mobileTitle}>Sectores</p>
+          <Link href="/sectores/cobranza-clinicas">Clínicas</Link>
+          <Link href="/sectores/cobranza-inmobiliarias">Inmobiliarias</Link>
+
+          <Link href="/blog">Blog</Link>
+          <Link href="/contacto">Contacto</Link>
 
           <button onClick={handleClick}>Solicitar asesoría</button>
         </div>

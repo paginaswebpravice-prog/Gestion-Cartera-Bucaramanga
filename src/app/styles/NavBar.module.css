@@ -135,6 +135,71 @@
 }
 
 /* =========================
+   DROPDOWN
+========================= */
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown span {
+  color: #004a80;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* menú oculto */
+
+.dropdownMenu {
+  position: absolute;
+  top: 35px;
+  left: 0;
+
+  min-width: 220px;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(0, 74, 128, 0.12);
+
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translateY(10px);
+
+  transition: all 0.25s ease;
+}
+
+/* hover */
+
+.dropdown:hover .dropdownMenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* links dropdown */
+
+.dropdownMenu a {
+  text-decoration: none;
+  color: #004a80;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.dropdownMenu a:hover {
+  color: #c4911a;
+}
+
+/* =========================
    HAMBURGER
 ========================= */
 
