@@ -1,0 +1,205 @@
+/* =========================
+   VARIABLES (ESCALABLE)
+========================= */
+:root {
+  --primary: #1c3d5a;
+  --accent: #f4b400;
+  --bg-soft: #f9fafc;
+  --bg-cta: #eef3ff;
+  --text: #1a1a1a;
+  --text-light: #555;
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* =========================
+   BASE
+========================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.heroLine {
+  width: 70px;
+  height: 4px;
+  background: var(--accent);
+  margin: 15px auto 25px;
+  border-radius: 10px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* =========================
+   SERVICES GRID
+========================= */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin: 60px 0;
+}
+
+.serviceCard {
+  background: var(--bg-soft);
+  padding: 28px;
+  border-radius: var(--radius);
+  border-left: 6px solid var(--accent);
+  transition: var(--transition);
+  position: relative;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+}
+
+.serviceCard h3 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.serviceCard p {
+  color: var(--text-light);
+  font-size: 0.98rem;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+  margin-top: 70px;
+  max-width: 900px;
+}
+
+.section h2 {
+  font-size: 1.7rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.section p {
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.section ul {
+  padding-left: 20px;
+}
+
+.section li {
+  margin-bottom: 8px;
+}
+
+/* =========================
+   FAQ
+========================= */
+.faqItem {
+  margin-bottom: 25px;
+}
+
+.faqItem h3 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+.ctaBox {
+  background: var(--bg-cta);
+  padding: 50px 30px;
+  border-radius: var(--radius);
+  text-align: center;
+  margin-top: 80px;
+}
+
+.ctaBox h2 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.ctaBox p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* =========================
+   CTA BUTTON
+========================= */
+.ctaButton {
+  display: inline-block;
+  background: var(--accent);
+  color: #000;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.95);
+}
+
+/* =========================
+   DIVIDERS / VISUAL DETAILS
+========================= */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #eaeaea;
+  margin: 60px 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 100px 18px 60px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+  }
+}
