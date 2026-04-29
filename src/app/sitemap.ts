@@ -1,58 +1,179 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://gestion-cartera-bucaramanga-iota.vercel.app/";
+  const baseUrl = "https://gestion-cartera-bucaramanga-iota.vercel.app";
 
-  const routes = [
-    "",
-    "/contacto",
+  const staticDate = "2026-01-01";
 
-    // 👇 LANDINGS / SERVICIOS (AJUSTA SEGÚN TU WEB)
-    "/sectores/cobranza-clinicas",
-    "/sectores/cobranza-construccion",
-    "/sectores/cobranza-educacion",
-    "/sectores/cobranza-inmobiliarias",
-    "/sectores/cobranza-pymes",
+  const routes: MetadataRoute.Sitemap = [
+    // 🏠 HOME
+    {
+      url: `${baseUrl}/`,
+      lastModified: staticDate,
+      changeFrequency: "weekly",
+      priority: 1,
+    },
 
-    "/servicios/cobranza-empresas",
-    "/servicios/cobro-juridico-bucaramanga",
-    "/servicios/cobro-prejuridico-bucaramanga",
-    "/servicios/negociacion-deudas",
-    "/servicios/recuperacion-cartera",
+    // 📞 CONTACTO
+    {
+      url: `${baseUrl}/contacto`,
+      lastModified: staticDate,
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
 
-    // 📚 BLOG
-    "/blog",
+    // 🧠 BLOG HOME
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: staticDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
 
-    // 🧠 ARTÍCULOS
-    "/blog/recuperar-cartera-vencida",
-    "/blog/cliente-no-paga-bucaramanga",
-    "/blog/cobro-prejuridico-bucaramanga",
-    "/blog/cobro-juridico-bucaramanga",
-    "/blog/cobrar-deuda-urgente-bucaramanga",
-    "/blog/errores-cobranza-bucaramanga",
-    "/blog/estrategias-cobranza-bucaramanga",
-    "/blog/evitar-morosidad-clientes-bucaramanga",
-    "/blog/flujo-de-caja",
-    "/blog/negociar-deudas",
-    "/blog/proceso-recuperacion-cartera-colombia",
-    "/blog/cartera-sin-abogados",
-    "/blog/tiempo-cobro-juridico",
+    // 🏢 SERVICIOS (alta intención comercial)
+    {
+      url: `${baseUrl}/servicios/cobranza-empresas`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/servicios/cobro-juridico-bucaramanga`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/servicios/cobro-prejuridico-bucaramanga`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/servicios/negociacion-deudas`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/servicios/recuperacion-cartera`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+
+    // 🏗️ SECTORES (intención media-alta SEO)
+    {
+      url: `${baseUrl}/sectores/cobranza-clinicas`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/sectores/cobranza-construccion`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/sectores/cobranza-educacion`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/sectores/cobranza-inmobiliarias`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/sectores/cobranza-pymes`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+
+    // 📚 BLOG POSTS (alta autoridad SEO)
+    {
+      url: `${baseUrl}/blog/recuperar-cartera-vencida`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/cliente-no-paga-bucaramanga`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/cobro-prejuridico-bucaramanga`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/blog/cobro-juridico-bucaramanga`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/blog/cobrar-deuda-urgente-bucaramanga`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/blog/errores-cobranza-bucaramanga`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/blog/estrategias-cobranza-bucaramanga`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/blog/evitar-morosidad-clientes-bucaramanga`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/flujo-de-caja`,
+      lastModified: staticDate,
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/negociar-deudas`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/proceso-recuperacion-cartera-colombia`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/cartera-sin-abogados`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/tiempo-cobro-juridico`,
+      lastModified: staticDate,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
   ];
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-
-    // 🎯 SEO INTELIGENTE
-    changeFrequency: route === "" ? "weekly" : "monthly",
-
-    priority:
-      route === ""
-        ? 1
-        : route.includes("cobranza")
-          ? 0.9
-          : route === "/blog"
-            ? 0.8
-            : 0.7,
-  }));
+  return routes;
 }
