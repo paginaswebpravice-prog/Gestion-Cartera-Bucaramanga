@@ -4,18 +4,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://gestion-cartera-bucaramanga-iota.vercel.app/";
 
   const routes = [
-    // 🔥 PRINCIPALES (MUY IMPORTANTES PARA SEO)
     "",
     "/contacto",
 
     // 👇 LANDINGS / SERVICIOS (AJUSTA SEGÚN TU WEB)
-    //"/servicios",
-    //"/cobranza",
-    //"/cobranza/prejuridica",
-    //"/cobranza/juridica",
-    //"/cobranza/empresas",
-    //"/cobranza/inmobiliarias",
-    //"/cobranza/salud",
+    "/sectores/cobranza-clinicas",
+    "/sectores/cobranza-construccion",
+    "/sectores/cobranza-educacion",
+    "/sectores/cobranza-inmobiliarias",
+    "/sectores/cobranza-pymes",
+
+    "/servicios/cobranza-empresas",
+    "/servicios/cobro-juridico-bucaramanga",
+    "/servicios/cobro-prejuridico-bucaramanga",
+    "/servicios/negociacion-deudas",
+    "/servicios/recuperacion-cartera",
 
     // 📚 BLOG
     "/blog",
