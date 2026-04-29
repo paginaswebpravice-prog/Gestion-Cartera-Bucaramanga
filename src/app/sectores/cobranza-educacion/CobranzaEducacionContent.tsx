@@ -2,17 +2,29 @@
 
 import styles from "../../styles/Landing.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function CobranzaEducacionContent() {
   return (
     <main className={styles.container}>
       {/* HERO */}
-      <section className={styles.hero}>
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1>
           Cobranza para instituciones educativas en Colombia: recupere
           pensiones, matrículas y cartera vencida
         </h1>
-        <div className={styles.heroLine}></div>
+
+        <motion.div
+          className={styles.heroLine}
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        />
 
         <p>
           Ayudamos a colegios, universidades, jardines infantiles e institutos
@@ -27,48 +39,58 @@ export default function CobranzaEducacionContent() {
           reduce la morosidad.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Solicitar asesoría especializada
         </Link>
-      </section>
+      </motion.section>
 
       {/* SERVICIOS */}
       <section className={styles.servicesGrid}>
-        <div className={styles.serviceCard}>
-          <h3>Cobro de pensiones escolares</h3>
-          <p>
-            Recuperación de mensualidades vencidas mediante contacto estratégico
-            con acudientes.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Recuperación de matrículas</h3>
-          <p>
-            Gestión de cobro de inscripciones, renovaciones y costos académicos
-            pendientes.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Negociación con acudientes</h3>
-          <p>
-            Diseño de acuerdos de pago flexibles ajustados a la realidad
-            económica familiar.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Gestión integral de cartera educativa</h3>
-          <p>
-            Control, seguimiento y recuperación de cartera en todos los niveles
-            educativos.
-          </p>
-        </div>
+        {[
+          {
+            title: "Cobro de pensiones escolares",
+            text: "Recuperación de mensualidades vencidas mediante contacto estratégico con acudientes.",
+          },
+          {
+            title: "Recuperación de matrículas",
+            text: "Gestión de cobro de inscripciones, renovaciones y costos académicos pendientes.",
+          },
+          {
+            title: "Negociación con acudientes",
+            text: "Diseño de acuerdos de pago flexibles ajustados a la realidad económica familiar.",
+          },
+          {
+            title: "Gestión integral de cartera educativa",
+            text: "Control, seguimiento y recuperación de cartera en todos los niveles educativos.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 25, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, delay: i * 0.08 }}
+            whileHover={{ y: -6 }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
       </section>
 
       {/* PROBLEMA REAL */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Problemas de cartera en el sector educativo</h2>
 
         <p>
@@ -96,10 +118,15 @@ export default function CobranzaEducacionContent() {
           Sin una estrategia clara de cobranza, estas deudas pueden convertirse
           en cartera incobrable.
         </p>
-      </section>
+      </motion.section>
 
       {/* ENFOQUE HUMANO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>
           Cobranza educativa: equilibrio entre recuperación y relación humana
         </h2>
@@ -124,10 +151,15 @@ export default function CobranzaEducacionContent() {
           <li>Protección de la imagen institucional</li>
           <li>Continuidad educativa del estudiante</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* PROCESO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Cómo funciona nuestro proceso de cobranza educativa</h2>
 
         <p>
@@ -148,10 +180,15 @@ export default function CobranzaEducacionContent() {
           Este modelo permite reducir significativamente la cartera vencida y
           mejorar el recaudo mensual.
         </p>
-      </section>
+      </motion.section>
 
       {/* BENEFICIOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Beneficios para instituciones educativas</h2>
 
         <ul>
@@ -161,10 +198,15 @@ export default function CobranzaEducacionContent() {
           <li>Optimización de procesos administrativos</li>
           <li>Disminución de cartera castigada</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* TIPOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Tipos de cartera que gestionamos</h2>
 
         <ul>
@@ -174,10 +216,15 @@ export default function CobranzaEducacionContent() {
           <li>Deudas universitarias</li>
           <li>Cartera acumulada de años anteriores</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* ERRORES */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Errores comunes en la cobranza educativa</h2>
 
         <ul>
@@ -187,10 +234,15 @@ export default function CobranzaEducacionContent() {
           <li>Comunicación inadecuada con acudientes</li>
           <li>No escalar a procesos legales a tiempo</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* CUANDO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Cuándo iniciar un proceso de cobro?</h2>
 
         <p>
@@ -198,10 +250,15 @@ export default function CobranzaEducacionContent() {
           incumplimiento de pago, evitando la acumulación de deuda y facilitando
           acuerdos tempranos.
         </p>
-      </section>
+      </motion.section>
 
       {/* FAQ */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Preguntas frecuentes</h2>
 
         <div className={styles.faqItem}>
@@ -234,20 +291,31 @@ export default function CobranzaEducacionContent() {
             Sí, son una de las estrategias más efectivas para recuperar cartera.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className={styles.ctaBox}>
+      <motion.section
+        className={styles.ctaBox}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2>Recupere su cartera educativa sin afectar su institución</h2>
         <p>
           Mejore su flujo de caja y reduzca la morosidad con un equipo experto
           en cobranza para el sector educativo.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Hablar con un especialista
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 }

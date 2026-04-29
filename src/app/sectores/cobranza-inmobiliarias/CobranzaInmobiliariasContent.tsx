@@ -2,17 +2,29 @@
 
 import styles from "../../styles/Landing.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function CobranzaInmobiliariasContent() {
   return (
     <main className={styles.container}>
       {/* HERO */}
-      <section className={styles.hero}>
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0, y: 45 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1>
           Cobranza para inmobiliarias en Colombia: recupere arriendos vencidos y
           cartera inmobiliaria
         </h1>
-        <div className={styles.heroLine}></div>
+
+        <motion.div
+          className={styles.heroLine}
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        />
 
         <p>
           Apoyamos a inmobiliarias, administradoras de propiedad raíz y
@@ -26,48 +38,58 @@ export default function CobranzaInmobiliariasContent() {
           inversión inmobiliaria con procesos estructurados y seguros.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Solicitar asesoría ahora
         </Link>
-      </section>
+      </motion.section>
 
       {/* SERVICIOS */}
       <section className={styles.servicesGrid}>
-        <div className={styles.serviceCard}>
-          <h3>Cobro de arriendos vencidos</h3>
-          <p>
-            Recuperación de cánones atrasados mediante gestión profesional con
-            arrendatarios.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Negociación con arrendatarios</h3>
-          <p>
-            Acuerdos de pago estructurados para evitar conflictos y acelerar el
-            recaudo.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Procesos de restitución de inmueble</h3>
-          <p>
-            Acciones legales para recuperar el inmueble en caso de
-            incumplimiento.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Gestión integral de cartera inmobiliaria</h3>
-          <p>
-            Control, seguimiento y recuperación de deudas en propiedades
-            arrendadas.
-          </p>
-        </div>
+        {[
+          {
+            title: "Cobro de arriendos vencidos",
+            text: "Recuperación de cánones atrasados mediante gestión profesional con arrendatarios.",
+          },
+          {
+            title: "Negociación con arrendatarios",
+            text: "Acuerdos de pago estructurados para evitar conflictos y acelerar el recaudo.",
+          },
+          {
+            title: "Procesos de restitución de inmueble",
+            text: "Acciones legales para recuperar el inmueble en caso de incumplimiento.",
+          },
+          {
+            title: "Gestión integral de cartera inmobiliaria",
+            text: "Control, seguimiento y recuperación de deudas en propiedades arrendadas.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 25, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, delay: i * 0.08 }}
+            whileHover={{ y: -6 }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
       </section>
 
       {/* PROBLEMAS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Problemas comunes en la cartera inmobiliaria</h2>
 
         <p>
@@ -91,10 +113,15 @@ export default function CobranzaInmobiliariasContent() {
           Sin una gestión adecuada, estas deudas pueden convertirse en pérdidas
           significativas.
         </p>
-      </section>
+      </motion.section>
 
       {/* TERMINOS CLAVE */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Conceptos clave en la cobranza inmobiliaria</h2>
 
         <p>
@@ -114,10 +141,15 @@ export default function CobranzaInmobiliariasContent() {
           Una correcta interpretación de estos elementos permite ejecutar una
           estrategia de cobro más efectiva.
         </p>
-      </section>
+      </motion.section>
 
       {/* PROCESO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Cómo recuperamos arriendos vencidos</h2>
 
         <p>
@@ -137,10 +169,15 @@ export default function CobranzaInmobiliariasContent() {
           Este enfoque permite recuperar el dinero en menor tiempo y con mayor
           efectividad.
         </p>
-      </section>
+      </motion.section>
 
       {/* BENEFICIOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Beneficios para inmobiliarias y propietarios</h2>
 
         <ul>
@@ -150,10 +187,15 @@ export default function CobranzaInmobiliariasContent() {
           <li>Protección de la inversión inmobiliaria</li>
           <li>Optimización del flujo de caja</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* TIPOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Tipos de cartera que gestionamos</h2>
 
         <ul>
@@ -163,10 +205,15 @@ export default function CobranzaInmobiliariasContent() {
           <li>Cartera con codeudores</li>
           <li>Contratos en mora prolongada</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* ERRORES */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Errores comunes en la cobranza inmobiliaria</h2>
 
         <ul>
@@ -175,10 +222,15 @@ export default function CobranzaInmobiliariasContent() {
           <li>Falta de seguimiento a la deuda</li>
           <li>No utilizar mecanismos legales a tiempo</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* CUANDO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Cuándo iniciar un proceso de cobro?</h2>
 
         <p>
@@ -186,10 +238,15 @@ export default function CobranzaInmobiliariasContent() {
           pago, evitando que la deuda crezca y se vuelva más difícil de
           recuperar.
         </p>
-      </section>
+      </motion.section>
 
       {/* FAQ */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Preguntas frecuentes</h2>
 
         <div className={styles.faqItem}>
@@ -220,20 +277,31 @@ export default function CobranzaInmobiliariasContent() {
           <h3>¿Cuánto tarda recuperar la deuda?</h3>
           <p>Depende del caso, pero puede variar entre semanas y meses.</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className={styles.ctaBox}>
+      <motion.section
+        className={styles.ctaBox}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2>Recupere sus arriendos y proteja su inversión</h2>
         <p>
           No permita que la morosidad afecte su rentabilidad. Le ayudamos a
           recuperar su dinero de forma efectiva y legal.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Hablar con un especialista
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 }

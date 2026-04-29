@@ -2,17 +2,29 @@
 
 import styles from "../../styles/Landing.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function CobranzaPymesContent() {
   return (
     <main className={styles.container}>
       {/* HERO */}
-      <section className={styles.hero}>
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0, y: 45 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1>
           Cobranza para PYMES en Colombia: recupere cartera vencida y mejore su
           flujo de caja
         </h1>
-        <div className={styles.heroLine}></div>
+
+        <motion.div
+          className={styles.heroLine}
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        />
 
         <p>
           Ayudamos a pequeñas y medianas empresas a recuperar cartera vencida,
@@ -26,46 +38,58 @@ export default function CobranzaPymesContent() {
           sus relaciones comerciales.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Solicitar asesoría para mi negocio
         </Link>
-      </section>
+      </motion.section>
 
       {/* SERVICIOS */}
       <section className={styles.servicesGrid}>
-        <div className={styles.serviceCard}>
-          <h3>Cobro de clientes morosos</h3>
-          <p>
-            Recuperamos pagos pendientes de clientes que incumplen sus
-            obligaciones.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Gestión de cartera empresarial</h3>
-          <p>
-            Organización y optimización del proceso de recaudo para su PYME.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Negociación de deudas</h3>
-          <p>
-            Acuerdos de pago flexibles que aumentan la probabilidad de
-            recuperación.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Cobro jurídico</h3>
-          <p>
-            Acciones legales cuando el cliente no responde o incumple acuerdos.
-          </p>
-        </div>
+        {[
+          {
+            title: "Cobro de clientes morosos",
+            text: "Recuperamos pagos pendientes de clientes que incumplen sus obligaciones.",
+          },
+          {
+            title: "Gestión de cartera empresarial",
+            text: "Organización y optimización del proceso de recaudo para su PYME.",
+          },
+          {
+            title: "Negociación de deudas",
+            text: "Acuerdos de pago flexibles que aumentan la probabilidad de recuperación.",
+          },
+          {
+            title: "Cobro jurídico",
+            text: "Acciones legales cuando el cliente no responde o incumple acuerdos.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 25, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, delay: i * 0.08 }}
+            whileHover={{ y: -6 }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
       </section>
 
       {/* PROBLEMAS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Problemas comunes de cartera en PYMES</h2>
 
         <p>
@@ -88,10 +112,15 @@ export default function CobranzaPymesContent() {
           Sin una estrategia clara, estas deudas pueden convertirse en pérdidas
           que afectan el crecimiento del negocio.
         </p>
-      </section>
+      </motion.section>
 
       {/* CONTEXTO REAL */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>La importancia del flujo de caja en una PYME</h2>
 
         <p>
@@ -112,10 +141,15 @@ export default function CobranzaPymesContent() {
           <li>Mejorar la estabilidad financiera</li>
           <li>Planificar el crecimiento del negocio</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* PROCESO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Cómo funciona nuestro proceso de cobranza para PYMES</h2>
 
         <p>Diseñamos un proceso adaptado a la realidad de su empresa:</p>
@@ -133,10 +167,15 @@ export default function CobranzaPymesContent() {
           Este modelo permite aumentar la tasa de recuperación y reducir los
           tiempos de cobro.
         </p>
-      </section>
+      </motion.section>
 
       {/* TIPOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Tipos de cartera que gestionamos</h2>
 
         <ul>
@@ -146,10 +185,15 @@ export default function CobranzaPymesContent() {
           <li>Servicios prestados no pagados</li>
           <li>Ventas a crédito sin recaudo</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* ERRORES */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Errores comunes en la cobranza de PYMES</h2>
 
         <ul>
@@ -159,10 +203,15 @@ export default function CobranzaPymesContent() {
           <li>No formalizar acuerdos de pago</li>
           <li>No escalar a acciones legales a tiempo</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* BENEFICIOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Beneficios de implementar una cobranza profesional</h2>
 
         <ul>
@@ -172,10 +221,15 @@ export default function CobranzaPymesContent() {
           <li>Ahorro de tiempo y recursos</li>
           <li>Mayor control financiero</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* CUANDO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Cuándo contratar un servicio de cobranza?</h2>
 
         <p>Es recomendable cuando su empresa presenta alguno de estos casos:</p>
@@ -186,10 +240,15 @@ export default function CobranzaPymesContent() {
           <li>Falta de tiempo para gestionar pagos</li>
           <li>Problemas de liquidez</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* FAQ */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Preguntas frecuentes</h2>
 
         <div className={styles.faqItem}>
@@ -217,20 +276,31 @@ export default function CobranzaPymesContent() {
             recuperación).
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className={styles.ctaBox}>
+      <motion.section
+        className={styles.ctaBox}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2>Recupere su dinero y fortalezca su empresa</h2>
         <p>
           No deje que los clientes morosos frenen su crecimiento. Le ayudamos a
           recuperar su cartera de forma efectiva.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Hablar con un asesor
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 }

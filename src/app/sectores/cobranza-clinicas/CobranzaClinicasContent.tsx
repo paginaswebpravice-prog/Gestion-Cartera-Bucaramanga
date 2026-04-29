@@ -2,17 +2,29 @@
 
 import styles from "../../styles/Landing.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function CobranzaClinicasContent() {
   return (
     <main className={styles.container}>
       {/* HERO */}
-      <section className={styles.hero}>
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1>
           Cobranza para clínicas y sector salud en Colombia: recupere cartera de
           EPS y pacientes
         </h1>
-        <div className={styles.heroLine}></div>
+
+        <motion.div
+          className={styles.heroLine}
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        />
 
         <p>
           Ayudamos a clínicas, hospitales, IPS y empresas del sector salud a
@@ -26,47 +38,58 @@ export default function CobranzaClinicasContent() {
           salud colombiano.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Solicitar asesoría especializada
         </Link>
-      </section>
+      </motion.section>
 
       {/* SERVICIOS */}
       <section className={styles.servicesGrid}>
-        <div className={styles.serviceCard}>
-          <h3>Cobranza a EPS</h3>
-          <p>
-            Gestión especializada de cuentas médicas pendientes con entidades
-            promotoras de salud.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Recuperación de cartera hospitalaria</h3>
-          <p>
-            Estrategias para recuperar pagos de servicios médicos prestados y
-            facturados.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Gestión y levantamiento de glosas</h3>
-          <p>
-            Recuperación de valores rechazados mediante auditoría y sustentación
-            técnica.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Cobranza a pacientes</h3>
-          <p>
-            Recuperación de pagos pendientes de usuarios particulares y copagos.
-          </p>
-        </div>
+        {[
+          {
+            title: "Cobranza a EPS",
+            text: "Gestión especializada de cuentas médicas pendientes con entidades promotoras de salud.",
+          },
+          {
+            title: "Recuperación de cartera hospitalaria",
+            text: "Estrategias para recuperar pagos de servicios médicos prestados y facturados.",
+          },
+          {
+            title: "Gestión y levantamiento de glosas",
+            text: "Recuperación de valores rechazados mediante auditoría y sustentación técnica.",
+          },
+          {
+            title: "Cobranza a pacientes",
+            text: "Recuperación de pagos pendientes de usuarios particulares y copagos.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
       </section>
 
       {/* PROBLEMA REAL */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2>El problema de cartera en el sector salud en Colombia</h2>
 
         <p>
@@ -93,10 +116,15 @@ export default function CobranzaClinicasContent() {
           Sin una estrategia especializada, esta cartera puede volverse
           incobrable con el tiempo.
         </p>
-      </section>
+      </motion.section>
 
       {/* GLOSAS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Gestión de glosas: clave para recuperar ingresos</h2>
 
         <p>
@@ -116,10 +144,15 @@ export default function CobranzaClinicasContent() {
           <li>Soporte documental</li>
           <li>Seguimiento hasta recuperación</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* PROCESO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Cómo funciona nuestro proceso de cobranza en salud</h2>
 
         <p>
@@ -140,10 +173,15 @@ export default function CobranzaClinicasContent() {
           Este enfoque permite mejorar significativamente los tiempos y
           resultados.
         </p>
-      </section>
+      </motion.section>
 
       {/* BENEFICIOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Beneficios de una cobranza especializada en salud</h2>
 
         <ul>
@@ -153,10 +191,15 @@ export default function CobranzaClinicasContent() {
           <li>Optimización de procesos administrativos</li>
           <li>Mayor control financiero</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* TIPOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Tipos de cartera que gestionamos</h2>
 
         <ul>
@@ -166,10 +209,15 @@ export default function CobranzaClinicasContent() {
           <li>Cartera hospitalaria</li>
           <li>Cartera de servicios médicos especializados</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* CUANDO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Cuándo tercerizar la cobranza en clínicas?</h2>
 
         <p>
@@ -182,10 +230,15 @@ export default function CobranzaClinicasContent() {
           Externalizar permite acceder a experiencia especializada y mejorar los
           resultados.
         </p>
-      </section>
+      </motion.section>
 
       {/* DIFERENCIAL */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Por qué elegir un servicio especializado en salud?</h2>
 
         <p>
@@ -199,10 +252,15 @@ export default function CobranzaClinicasContent() {
           <li>Manejo de glosas y facturación</li>
           <li>Estrategias legales especializadas</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* FAQ */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Preguntas frecuentes sobre cobranza en clínicas</h2>
 
         <div className={styles.faqItem}>
@@ -233,20 +291,31 @@ export default function CobranzaClinicasContent() {
           <h3>¿Qué pasa si no pagan?</h3>
           <p>Se puede escalar a procesos jurídicos para recuperar la deuda.</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className={styles.ctaBox}>
+      <motion.section
+        className={styles.ctaBox}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2>Optimice la recuperación de cartera en su clínica</h2>
         <p>
           Mejore su liquidez y reduzca su cartera vencida con un servicio
           especializado en el sector salud.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Hablar con un especialista
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 }

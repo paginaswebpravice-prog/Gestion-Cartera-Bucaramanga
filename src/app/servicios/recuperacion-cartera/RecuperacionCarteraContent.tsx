@@ -2,16 +2,24 @@
 
 import styles from "../../styles/Landing.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function RecuperacionCarteraContent() {
   return (
     <main className={styles.container}>
       {/* HERO */}
-      <section className={styles.hero}>
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <h1>
           Recuperación de cartera en Colombia: aumente su flujo de caja y
           reduzca la morosidad
         </h1>
+
         <div className={styles.heroLine}></div>
 
         <p>
@@ -26,47 +34,64 @@ export default function RecuperacionCarteraContent() {
           cartera vencida en su negocio.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Solicitar asesoría ahora
         </Link>
-      </section>
+      </motion.section>
 
       {/* SERVICIOS */}
-      <section className={styles.servicesGrid}>
-        <div className={styles.serviceCard}>
-          <h3>Cobro prejurídico</h3>
-          <p>
-            Recuperamos deudas mediante negociación estratégica sin necesidad de
-            demanda.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Cobro jurídico</h3>
-          <p>
-            Iniciamos procesos legales para exigir el pago cuando el deudor no
-            responde.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Gestión integral de cartera</h3>
-          <p>
-            Administramos todo el proceso de cobranza con seguimiento continuo.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Negociación de deudas</h3>
-          <p>
-            Diseñamos acuerdos efectivos que facilitan la recuperación del
-            dinero.
-          </p>
-        </div>
-      </section>
+      <motion.section
+        className={styles.servicesGrid}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {[
+          {
+            title: "Cobro prejurídico",
+            text: "Recuperamos deudas mediante negociación estratégica sin necesidad de demanda.",
+          },
+          {
+            title: "Cobro jurídico",
+            text: "Iniciamos procesos legales para exigir el pago cuando el deudor no responde.",
+          },
+          {
+            title: "Gestión integral de cartera",
+            text: "Administramos todo el proceso de cobranza con seguimiento continuo.",
+          },
+          {
+            title: "Negociación de deudas",
+            text: "Diseñamos acuerdos efectivos que facilitan la recuperación del dinero.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
+      </motion.section>
 
       {/* DEFINICIÓN */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>¿Qué es la recuperación de cartera?</h2>
 
         <p>
@@ -86,16 +111,17 @@ export default function RecuperacionCarteraContent() {
           garantizar la estabilidad financiera de las empresas y evitar pérdidas
           económicas.
         </p>
-      </section>
+      </motion.section>
 
       {/* PROBLEMA */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>El impacto de la cartera vencida en las empresas</h2>
-
-        <p>
-          La acumulación de cartera vencida es uno de los principales problemas
-          financieros que enfrentan las empresas en Colombia.
-        </p>
 
         <ul>
           <li>Disminución del flujo de caja</li>
@@ -108,16 +134,17 @@ export default function RecuperacionCarteraContent() {
           Sin una estrategia efectiva de cobranza, estos problemas pueden
           escalar rápidamente y afectar la sostenibilidad del negocio.
         </p>
-      </section>
+      </motion.section>
 
       {/* ETAPAS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Etapas de la recuperación de cartera</h2>
-
-        <p>
-          El proceso de recuperación se divide en varias fases que aumentan el
-          nivel de intervención:
-        </p>
 
         <ul>
           <li>
@@ -131,21 +158,17 @@ export default function RecuperacionCarteraContent() {
             <strong>Cobro jurídico:</strong> acciones legales y embargos.
           </li>
         </ul>
-
-        <p>
-          Aplicar correctamente cada etapa permite aumentar la probabilidad de
-          recuperación.
-        </p>
-      </section>
+      </motion.section>
 
       {/* PROCESO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Cómo funciona nuestro proceso de recuperación</h2>
-
-        <p>
-          Nuestro enfoque está diseñado para maximizar resultados mediante una
-          metodología estructurada:
-        </p>
 
         <ul>
           <li>Análisis detallado de la cartera</li>
@@ -155,15 +178,16 @@ export default function RecuperacionCarteraContent() {
           <li>Seguimiento constante</li>
           <li>Escalamiento a cobro jurídico si es necesario</li>
         </ul>
-
-        <p>
-          Este proceso permite mejorar significativamente la tasa de
-          recuperación.
-        </p>
-      </section>
+      </motion.section>
 
       {/* TIPOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Tipos de cartera que gestionamos</h2>
 
         <ul>
@@ -173,10 +197,16 @@ export default function RecuperacionCarteraContent() {
           <li>Cartera financiera</li>
           <li>Cartera personal</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* BENEFICIOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Beneficios de una gestión profesional de cartera</h2>
 
         <ul>
@@ -186,10 +216,16 @@ export default function RecuperacionCarteraContent() {
           <li>Optimización de recursos internos</li>
           <li>Mayor control financiero</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* CUANDO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>¿Cuándo iniciar la recuperación de cartera?</h2>
 
         <p>
@@ -197,39 +233,16 @@ export default function RecuperacionCarteraContent() {
           de pago. Entre más tiempo pase, menor será la probabilidad de
           recuperar la deuda.
         </p>
-      </section>
-
-      {/* ERRORES */}
-      <section className={styles.section}>
-        <h2>Errores comunes en la gestión de cartera</h2>
-
-        <ul>
-          <li>No hacer seguimiento a clientes morosos</li>
-          <li>Esperar demasiado tiempo para cobrar</li>
-          <li>No contar con estrategias claras</li>
-          <li>No utilizar respaldo legal cuando es necesario</li>
-        </ul>
-      </section>
-
-      {/* DIFERENCIAL */}
-      <section className={styles.section}>
-        <h2>¿Por qué contratar un servicio especializado?</h2>
-
-        <p>
-          Contar con expertos en recuperación de cartera permite aumentar las
-          probabilidades de éxito y reducir riesgos financieros.
-        </p>
-
-        <ul>
-          <li>Estrategias profesionales de cobranza</li>
-          <li>Mayor efectividad en negociación</li>
-          <li>Respaldo legal en cada etapa</li>
-          <li>Procesos estructurados y medibles</li>
-        </ul>
-      </section>
+      </motion.section>
 
       {/* FAQ */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Preguntas frecuentes sobre recuperación de cartera</h2>
 
         <div className={styles.faqItem}>
@@ -254,20 +267,31 @@ export default function RecuperacionCarteraContent() {
             significativamente las probabilidades de éxito.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className={styles.ctaBox}>
+      <motion.section
+        className={styles.ctaBox}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Recupere su cartera y fortalezca su negocio</h2>
         <p>
           No permita que la morosidad afecte su empresa. Nuestro equipo está
           listo para ayudarle a recuperar su dinero de forma efectiva.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Hablar con un experto
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 }

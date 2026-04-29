@@ -2,17 +2,29 @@
 
 import styles from "../../styles/Landing.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function CobranzaEmpresasContent() {
   return (
     <main className={styles.container}>
       {/* HERO */}
-      <section className={styles.hero}>
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0, y: 45 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1>
           Cobranza para empresas en Colombia: recupere cartera y mejore su flujo
           de caja
         </h1>
-        <div className={styles.heroLine}></div>
+
+        <motion.div
+          className={styles.heroLine}
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        />
 
         <p>
           Ayudamos a empresas a recuperar cartera vencida mediante estrategias
@@ -26,48 +38,58 @@ export default function CobranzaEmpresasContent() {
           en el menor tiempo posible.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Solicitar asesoría empresarial
         </Link>
-      </section>
+      </motion.section>
 
       {/* SERVICIOS */}
       <section className={styles.servicesGrid}>
-        <div className={styles.serviceCard}>
-          <h3>Gestión integral de cartera</h3>
-          <p>
-            Administramos todo el ciclo de cobranza, desde la identificación de
-            deudas hasta la recuperación efectiva del dinero.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Cobranza prejurídica</h3>
-          <p>
-            Recuperamos cartera mediante contacto estratégico y negociación,
-            evitando procesos judiciales innecesarios.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Cobranza jurídica</h3>
-          <p>
-            Iniciamos procesos legales para exigir el pago cuando el deudor no
-            responde a la gestión inicial.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Reportes y seguimiento</h3>
-          <p>
-            Información clara, periódica y detallada sobre el estado de cada
-            caso.
-          </p>
-        </div>
+        {[
+          {
+            title: "Gestión integral de cartera",
+            text: "Administramos todo el ciclo de cobranza, desde la identificación de deudas hasta la recuperación efectiva del dinero.",
+          },
+          {
+            title: "Cobranza prejurídica",
+            text: "Recuperamos cartera mediante contacto estratégico y negociación, evitando procesos judiciales innecesarios.",
+          },
+          {
+            title: "Cobranza jurídica",
+            text: "Iniciamos procesos legales para exigir el pago cuando el deudor no responde a la gestión inicial.",
+          },
+          {
+            title: "Reportes y seguimiento",
+            text: "Información clara, periódica y detallada sobre el estado de cada caso.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 25, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, delay: i * 0.08 }}
+            whileHover={{ y: -6 }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
       </section>
 
       {/* PROBLEMA REAL */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>El impacto de la cartera vencida en las empresas</h2>
 
         <p>
@@ -87,10 +109,15 @@ export default function CobranzaEmpresasContent() {
           Una correcta gestión de cobranza permite convertir cuentas por cobrar
           en flujo de caja real, mejorando la estabilidad financiera.
         </p>
-      </section>
+      </motion.section>
 
       {/* COMO TRABAJAN */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Cómo funciona nuestro servicio de cobranza empresarial</h2>
 
         <p>
@@ -111,10 +138,15 @@ export default function CobranzaEmpresasContent() {
           Este enfoque permite aumentar significativamente la tasa de
           recuperación frente a métodos tradicionales.
         </p>
-      </section>
+      </motion.section>
 
       {/* DIFERENCIAL */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Qué nos diferencia de otras empresas de cobranza?</h2>
 
         <p>
@@ -128,10 +160,15 @@ export default function CobranzaEmpresasContent() {
           <li>Equipo con experiencia legal y financiera</li>
           <li>Procesos adaptados a cada empresa</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* BENEFICIOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Beneficios de una cobranza profesional</h2>
 
         <p>
@@ -146,10 +183,15 @@ export default function CobranzaEmpresasContent() {
           <li>Mayor control financiero</li>
           <li>Disminución del riesgo de pérdidas</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* TIPOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Tipos de cartera empresarial que gestionamos</h2>
 
         <p>
@@ -164,10 +206,15 @@ export default function CobranzaEmpresasContent() {
           <li>Cartera B2B (empresa a empresa)</li>
           <li>Cartera de clientes recurrentes</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* CUANDO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Cuándo es el momento ideal para iniciar la cobranza?</h2>
 
         <p>
@@ -180,10 +227,15 @@ export default function CobranzaEmpresasContent() {
           que esto aumenta significativamente las probabilidades de
           recuperación.
         </p>
-      </section>
+      </motion.section>
 
       {/* CASOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Casos comunes de cobranza empresarial</h2>
 
         <ul>
@@ -192,10 +244,15 @@ export default function CobranzaEmpresasContent() {
           <li>Facturas vencidas sin respuesta</li>
           <li>Deudas acumuladas difíciles de recuperar</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* FAQ */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Preguntas frecuentes sobre cobranza empresarial</h2>
 
         <div className={styles.faqItem}>
@@ -223,20 +280,31 @@ export default function CobranzaEmpresasContent() {
           <h3>¿Qué pasa si el deudor no responde?</h3>
           <p>Se procede con acciones legales para exigir el pago.</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA FINAL */}
-      <section className={styles.ctaBox}>
+      <motion.section
+        className={styles.ctaBox}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2>Recupere su cartera y fortalezca su empresa</h2>
         <p>
           No permita que los clientes morosos afecten su negocio. Optimice su
           cobranza con expertos y obtenga resultados reales.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Hablar con un especialista
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 }

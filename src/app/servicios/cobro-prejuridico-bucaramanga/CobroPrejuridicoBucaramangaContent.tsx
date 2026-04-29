@@ -2,17 +2,29 @@
 
 import styles from "../../styles/Landing.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function CobroPrejuridicoBucaramangaContent() {
   return (
     <main className={styles.container}>
       {/* HERO */}
-      <section className={styles.hero}>
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1>
           Cobro prejurídico en Bucaramanga: recupere su dinero sin necesidad de
           demandar
         </h1>
-        <div className={styles.heroLine}></div>
+
+        <motion.div
+          className={styles.heroLine}
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        />
 
         <p>
           Recuperamos su cartera vencida en Bucaramanga mediante estrategias
@@ -26,48 +38,58 @@ export default function CobroPrejuridicoBucaramangaContent() {
           comercial con sus clientes.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Solicitar asesoría inmediata
         </Link>
-      </section>
+      </motion.section>
 
       {/* SERVICIOS */}
       <section className={styles.servicesGrid}>
-        <div className={styles.serviceCard}>
-          <h3>Gestión de cobranza extrajudicial</h3>
-          <p>
-            Contactamos a los deudores mediante canales estratégicos para lograr
-            acuerdos de pago rápidos y efectivos.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Negociación de deudas</h3>
-          <p>
-            Diseñamos acuerdos flexibles adaptados a la capacidad de pago del
-            deudor para aumentar la probabilidad de recuperación.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Seguimiento continuo</h3>
-          <p>
-            Monitoreamos cada caso para asegurar el cumplimiento de los acuerdos
-            establecidos.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Prevención de demandas</h3>
-          <p>
-            Reducimos la necesidad de procesos judiciales mediante estrategias
-            efectivas en etapa temprana.
-          </p>
-        </div>
+        {[
+          {
+            title: "Gestión de cobranza extrajudicial",
+            text: "Contactamos a los deudores mediante canales estratégicos para lograr acuerdos de pago rápidos y efectivos.",
+          },
+          {
+            title: "Negociación de deudas",
+            text: "Diseñamos acuerdos flexibles adaptados a la capacidad de pago del deudor para aumentar la probabilidad de recuperación.",
+          },
+          {
+            title: "Seguimiento continuo",
+            text: "Monitoreamos cada caso para asegurar el cumplimiento de los acuerdos establecidos.",
+          },
+          {
+            title: "Prevención de demandas",
+            text: "Reducimos la necesidad de procesos judiciales mediante estrategias efectivas en etapa temprana.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 25, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, delay: i * 0.08 }}
+            whileHover={{ y: -6 }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
       </section>
 
       {/* DEFINICIÓN */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Qué es el cobro prejurídico y por qué es clave?</h2>
 
         <p>
@@ -87,10 +109,15 @@ export default function CobroPrejuridicoBucaramangaContent() {
           Implementar una estrategia adecuada en esta fase puede evitar procesos
           largos y costosos, aumentando la probabilidad de éxito.
         </p>
-      </section>
+      </motion.section>
 
       {/* PROBLEMA */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Problemas comunes que resuelve el cobro prejurídico</h2>
 
         <ul>
@@ -105,10 +132,15 @@ export default function CobroPrejuridicoBucaramangaContent() {
           Estos problemas pueden escalar rápidamente si no se gestionan de forma
           profesional desde etapas tempranas.
         </p>
-      </section>
+      </motion.section>
 
       {/* VENTAJAS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Ventajas del cobro prejurídico frente al cobro judicial</h2>
 
         <ul>
@@ -118,15 +150,15 @@ export default function CobroPrejuridicoBucaramangaContent() {
           <li>Menor desgaste legal</li>
           <li>Preservación de relaciones comerciales</li>
         </ul>
-
-        <p>
-          En muchos casos, una buena gestión prejurídica logra resolver el
-          problema sin necesidad de acudir a una demanda.
-        </p>
-      </section>
+      </motion.section>
 
       {/* PROCESO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Cómo funciona nuestro proceso de cobro prejurídico</h2>
 
         <p>
@@ -146,10 +178,15 @@ export default function CobroPrejuridicoBucaramangaContent() {
           Este enfoque aumenta significativamente la probabilidad de
           recuperación frente a métodos tradicionales.
         </p>
-      </section>
+      </motion.section>
 
       {/* DIFERENCIAL */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Por qué contratar un servicio profesional de cobranza?</h2>
 
         <p>
@@ -163,10 +200,15 @@ export default function CobroPrejuridicoBucaramangaContent() {
           <li>Mejor manejo de clientes difíciles</li>
           <li>Preparación para escalar a cobro jurídico si es necesario</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* CUANDO ESCALAR */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Cuándo pasar de cobro prejurídico a cobro jurídico?</h2>
 
         <p>
@@ -178,10 +220,15 @@ export default function CobroPrejuridicoBucaramangaContent() {
           Contar con un proceso estructurado permite hacer esta transición de
           manera efectiva sin perder tiempo.
         </p>
-      </section>
+      </motion.section>
 
       {/* CASOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Casos donde el cobro prejurídico es más efectivo</h2>
 
         <ul>
@@ -190,10 +237,15 @@ export default function CobroPrejuridicoBucaramangaContent() {
           <li>Relaciones comerciales activas</li>
           <li>Facturas pendientes sin conflicto legal</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* FAQ */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Preguntas frecuentes sobre cobro prejurídico</h2>
 
         <div className={styles.faqItem}>
@@ -223,20 +275,31 @@ export default function CobroPrejuridicoBucaramangaContent() {
             respetuosas.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className={styles.ctaBox}>
+      <motion.section
+        className={styles.ctaBox}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2>Recupere su cartera sin ir a juicio</h2>
         <p>
           Optimice su flujo de caja con un servicio de cobranza efectivo en
           Bucaramanga.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Hablar con un especialista
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 }

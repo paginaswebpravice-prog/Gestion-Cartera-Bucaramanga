@@ -2,17 +2,29 @@
 
 import styles from "../../styles/Landing.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function CobranzaConstruccionContent() {
   return (
     <main className={styles.container}>
       {/* HERO */}
-      <section className={styles.hero}>
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1>
           Cobranza para el sector construcción en Colombia: recupere pagos de
           obras, contratos y facturación
         </h1>
-        <div className={styles.heroLine}></div>
+
+        <motion.div
+          className={styles.heroLine}
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        />
 
         <p>
           Apoyamos a constructoras, contratistas y subcontratistas en la
@@ -27,45 +39,59 @@ export default function CobranzaConstruccionContent() {
           construcción en Colombia.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Solicitar asesoría especializada
         </Link>
-      </section>
+      </motion.section>
 
       {/* SERVICIOS */}
       <section className={styles.servicesGrid}>
-        <div className={styles.serviceCard}>
-          <h3>Cobro de facturas de obra</h3>
-          <p>
-            Recuperación de pagos pendientes por avances, cortes de obra y actas
-            firmadas.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Recuperación de cartera contractual</h3>
-          <p>
-            Gestión de cobro de contratos incumplidos entre empresas del sector.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Negociación con empresas deudoras</h3>
-          <p>
-            Acuerdos de pago estructurados para evitar litigios prolongados.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Procesos jurídicos en construcción</h3>
-          <p>
-            Acciones legales para exigir el pago de obligaciones contractuales.
-          </p>
-        </div>
+        {[
+          {
+            title: "Cobro de facturas de obra",
+            text: "Recuperación de pagos pendientes por avances, cortes de obra y actas firmadas.",
+          },
+          {
+            title: "Recuperación de cartera contractual",
+            text: "Gestión de cobro de contratos incumplidos entre empresas del sector.",
+          },
+          {
+            title: "Negociación con empresas deudoras",
+            text: "Acuerdos de pago estructurados para evitar litigios prolongados.",
+          },
+          {
+            title: "Procesos jurídicos en construcción",
+            text: "Acciones legales para exigir el pago de obligaciones contractuales.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 25, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, delay: i * 0.08 }}
+            whileHover={{ y: -6 }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
       </section>
 
       {/* PROBLEMA REAL */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2>Problemas de cartera en el sector construcción</h2>
 
         <p>
@@ -93,10 +119,15 @@ export default function CobranzaConstruccionContent() {
           Sin una gestión profesional, estas deudas pueden escalar y volverse
           difíciles de recuperar.
         </p>
-      </section>
+      </motion.section>
 
       {/* DOCUMENTACIÓN */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Importancia de los soportes en la recuperación de cartera</h2>
 
         <p>
@@ -116,10 +147,15 @@ export default function CobranzaConstruccionContent() {
           Un adecuado manejo documental aumenta significativamente la
           probabilidad de éxito en la cobranza.
         </p>
-      </section>
+      </motion.section>
 
       {/* PROCESO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Cómo funciona nuestro proceso de cobranza en construcción</h2>
 
         <p>
@@ -141,10 +177,15 @@ export default function CobranzaConstruccionContent() {
           Este proceso permite maximizar la recuperación y reducir los tiempos
           de cobro.
         </p>
-      </section>
+      </motion.section>
 
       {/* CASOS COMUNES */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Casos frecuentes en cobranza de construcción</h2>
 
         <ul>
@@ -153,10 +194,15 @@ export default function CobranzaConstruccionContent() {
           <li>Pagos retenidos por disputas contractuales</li>
           <li>Subcontratistas sin recibir pago</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* BENEFICIOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Beneficios para constructoras y contratistas</h2>
 
         <ul>
@@ -166,10 +212,15 @@ export default function CobranzaConstruccionContent() {
           <li>Mayor control sobre la cartera</li>
           <li>Optimización de procesos administrativos</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* TIPOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Tipos de cartera que gestionamos</h2>
 
         <ul>
@@ -179,20 +230,30 @@ export default function CobranzaConstruccionContent() {
           <li>Servicios subcontratados</li>
           <li>Pagos por interventoría y supervisión</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* CUANDO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Cuándo iniciar un proceso de cobranza?</h2>
 
         <p>
           Lo ideal es iniciar el proceso desde el primer incumplimiento de pago,
           evitando que la deuda aumente o se diluya en disputas contractuales.
         </p>
-      </section>
+      </motion.section>
 
       {/* ERRORES */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Errores comunes en la recuperación de cartera en construcción</h2>
 
         <ul>
@@ -201,10 +262,15 @@ export default function CobranzaConstruccionContent() {
           <li>Retrasar la gestión de cobro</li>
           <li>No escalar a acciones legales a tiempo</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* FAQ */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Preguntas frecuentes</h2>
 
         <div className={styles.faqItem}>
@@ -234,20 +300,31 @@ export default function CobranzaConstruccionContent() {
           <h3>¿Cuánto tarda recuperar una deuda?</h3>
           <p>Depende del caso, pero puede variar entre semanas y meses.</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className={styles.ctaBox}>
+      <motion.section
+        className={styles.ctaBox}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2>Recupere los pagos de sus proyectos de construcción</h2>
         <p>
           No permita que los incumplimientos afecten su operación. Le ayudamos a
           recuperar su dinero de forma efectiva y legal.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Hablar con un especialista
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 }

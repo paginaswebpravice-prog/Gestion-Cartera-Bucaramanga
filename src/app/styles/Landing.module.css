@@ -1,28 +1,29 @@
 /* =========================
-   VARIABLES (SISTEMA VISUAL PRO)
+   VARIABLES (PALETA PRAVICE PRO)
 ========================= */
 :root {
-  --primary: #0f2f4a;
-  --primary-light: #1c4f7a;
+  --primary: #004a80;
+  --primary-light: #0a5ea3;
 
   --accent: #f7c600;
   --accent-dark: #c4911a;
 
-  --bg-soft: #f7f9fc;
-  --bg-cta: linear-gradient(135deg, #eef3ff, #f8fbff);
+  --bg: #ffffff;
+  --bg-soft: #f9fbfd;
+  --bg-cta: linear-gradient(135deg, #ffffff, #f7f9fc);
 
-  --text: #1a1a1a;
-  --text-light: #5f6b7a;
+  --text: #000;
+  --text-light: #4a5568;
 
-  --border: rgba(0, 74, 128, 0.08);
+  --border: rgba(0, 74, 128, 0.12);
 
-  --radius: 14px;
+  --radius: 16px;
 
-  --shadow-sm: 0 4px 12px rgba(0, 74, 128, 0.05);
-  --shadow-md: 0 8px 25px rgba(0, 74, 128, 0.08);
-  --shadow-lg: 0 15px 45px rgba(0, 74, 128, 0.12);
+  --shadow-sm: 0 4px 14px rgba(0, 74, 128, 0.06);
+  --shadow-md: 0 10px 30px rgba(0, 74, 128, 0.08);
+  --shadow-lg: 0 20px 50px rgba(0, 74, 128, 0.12);
 
-  --transition: all 0.28s ease;
+  --transition: all 0.25s ease;
 }
 
 /* =========================
@@ -40,53 +41,55 @@
 
   color: var(--text);
   line-height: 1.7;
+  background: var(--bg);
 }
 
 /* =========================
-   HERO (MEJORADO)
+   HERO (MÁS IMPACTO)
 ========================= */
 .hero {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 90px;
   position: relative;
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-size: clamp(2.3rem, 4vw, 3.2rem);
   font-weight: 800;
   color: var(--primary);
-  margin-bottom: 12px;
-  line-height: 1.25;
+  margin-bottom: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
 }
 
 .heroLine {
-  width: 80px;
-  height: 4px;
+  width: 90px;
+  height: 5px;
   background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-  margin: 18px auto 28px;
+  margin: 20px auto 30px;
   border-radius: 999px;
 }
 
 .hero p {
   font-size: 1.15rem;
   color: var(--text-light);
-  max-width: 750px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
 /* =========================
-   SERVICES GRID (MEJOR UX)
+   SERVICES GRID (LOOK PREMIUM)
 ========================= */
 .servicesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 70px 0;
+  gap: 32px;
+  margin: 80px 0;
 }
 
 .serviceCard {
-  background: #fff;
-  padding: 30px;
+  background: var(--bg);
+  padding: 32px;
   border-radius: var(--radius);
 
   border: 1px solid var(--border);
@@ -99,7 +102,7 @@
   overflow: hidden;
 }
 
-/* línea superior animada */
+/* línea superior elegante */
 .serviceCard::before {
   content: "";
   position: absolute;
@@ -117,8 +120,22 @@
   transition: var(--transition);
 }
 
+/* glow sutil */
+.serviceCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(247, 198, 0, 0.08),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: var(--transition);
+}
+
 .serviceCard:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-md);
 }
 
@@ -126,8 +143,12 @@
   transform: scaleX(1);
 }
 
+.serviceCard:hover::after {
+  opacity: 1;
+}
+
 .serviceCard h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: var(--primary);
   margin-bottom: 12px;
 }
@@ -138,36 +159,35 @@
 }
 
 /* =========================
-   SECTIONS (MEJOR LEGIBILIDAD)
+   SECTIONS (MEJOR JERARQUÍA)
 ========================= */
 .section {
-  margin-top: 80px;
+  margin-top: 90px;
   max-width: 900px;
 }
 
 .section h2 {
-  font-size: 1.9rem;
+  font-size: 2rem;
   color: var(--primary);
-  margin-bottom: 18px;
-  line-height: 1.35;
+  margin-bottom: 20px;
+  line-height: 1.3;
   position: relative;
 }
 
-/* detalle visual elegante */
 .section h2::after {
   content: "";
   display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--accent);
-  margin-top: 10px;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  margin-top: 12px;
   border-radius: 6px;
 }
 
 .section p {
   margin-bottom: 16px;
-  color: #3e4a59;
-  font-size: 1.02rem;
+  color: var(--text-light);
+  font-size: 1.03rem;
 }
 
 .section ul {
@@ -177,18 +197,18 @@
 
 .section li {
   margin-bottom: 10px;
-  color: #3e4a59;
+  color: var(--text-light);
 }
 
 /* =========================
-   FAQ (ESTILO MÁS MODERNO)
+   FAQ (ESTILO TARJETA PREMIUM)
 ========================= */
 .faqItem {
   margin-bottom: 25px;
-  padding: 18px 20px;
+  padding: 20px 22px;
 
-  background: #fff;
-  border-radius: 10px;
+  background: var(--bg);
+  border-radius: 12px;
 
   border: 1px solid var(--border);
 
@@ -198,12 +218,12 @@
 }
 
 .faqItem:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
 
 .faqItem h3 {
-  font-size: 1.08rem;
+  font-size: 1.1rem;
   color: var(--primary);
   margin-bottom: 6px;
 }
@@ -214,30 +234,30 @@
 .ctaBox {
   background: var(--bg-cta);
 
-  padding: 60px 30px;
+  padding: 70px 30px;
   border-radius: var(--radius);
 
   text-align: center;
-  margin-top: 100px;
+  margin-top: 110px;
 
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   border: 1px solid var(--border);
 }
 
 .ctaBox h2 {
   color: var(--primary);
-  margin-bottom: 12px;
-  font-size: 1.9rem;
+  margin-bottom: 14px;
+  font-size: 2rem;
 }
 
 .ctaBox p {
   color: var(--text-light);
-  margin-bottom: 25px;
+  margin-bottom: 28px;
   font-size: 1.05rem;
 }
 
 /* =========================
-   CTA BUTTON (MEJOR CONVERSIÓN)
+   CTA BUTTON (ALTA CONVERSIÓN)
 ========================= */
 .ctaButton {
   display: inline-block;
@@ -245,7 +265,7 @@
   background: linear-gradient(135deg, var(--accent), var(--accent-dark));
   color: #000;
 
-  padding: 15px 30px;
+  padding: 16px 32px;
   border-radius: 999px;
 
   font-weight: 700;
@@ -254,12 +274,13 @@
   text-decoration: none;
 
   transition: var(--transition);
-  box-shadow: 0 10px 25px rgba(196, 145, 26, 0.35);
+
+  box-shadow: 0 12px 30px rgba(196, 145, 26, 0.35);
 }
 
 .ctaButton:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(196, 145, 26, 0.45);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 18px 45px rgba(196, 145, 26, 0.45);
 }
 
 /* =========================
@@ -269,7 +290,7 @@
   width: 100%;
   height: 1px;
   background: var(--border);
-  margin: 70px 0;
+  margin: 80px 0;
 }
 
 /* =========================
@@ -285,7 +306,7 @@
   }
 
   .section h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .servicesGrid {

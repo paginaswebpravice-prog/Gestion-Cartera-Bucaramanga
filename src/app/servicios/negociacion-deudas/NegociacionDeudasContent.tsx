@@ -2,15 +2,23 @@
 
 import styles from "../../styles/Landing.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function NegociacionDeudasContent() {
   return (
     <main className={styles.container}>
       {/* HERO */}
-      <section className={styles.hero}>
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <h1>
           Negociación de deudas en Colombia: reduzca intereses y evite embargos
         </h1>
+
         <div className={styles.heroLine}></div>
 
         <p>
@@ -25,43 +33,64 @@ export default function NegociacionDeudasContent() {
           acompañamiento legal.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Solicitar asesoría confidencial
         </Link>
-      </section>
+      </motion.section>
 
       {/* SERVICIOS */}
-      <section className={styles.servicesGrid}>
-        <div className={styles.serviceCard}>
-          <h3>Acuerdos de pago personalizados</h3>
-          <p>
-            Diseñamos planes de pago ajustados a su capacidad financiera real.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Reducción de intereses y mora</h3>
-          <p>Negociamos con acreedores para disminuir intereses acumulados.</p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Evitar embargos y demandas</h3>
-          <p>
-            Buscamos soluciones antes de que el caso escale a instancias
-            legales.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Acompañamiento legal y financiero</h3>
-          <p>
-            Lo guiamos durante todo el proceso para lograr un acuerdo viable.
-          </p>
-        </div>
-      </section>
+      <motion.section
+        className={styles.servicesGrid}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {[
+          {
+            title: "Acuerdos de pago personalizados",
+            text: "Diseñamos planes de pago ajustados a su capacidad financiera real.",
+          },
+          {
+            title: "Reducción de intereses y mora",
+            text: "Negociamos con acreedores para disminuir intereses acumulados.",
+          },
+          {
+            title: "Evitar embargos y demandas",
+            text: "Buscamos soluciones antes de que el caso escale a instancias legales.",
+          },
+          {
+            title: "Acompañamiento legal y financiero",
+            text: "Lo guiamos durante todo el proceso para lograr un acuerdo viable.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
+      </motion.section>
 
       {/* DEFINICIÓN */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>¿Qué es la negociación de deudas?</h2>
 
         <p>
@@ -81,10 +110,16 @@ export default function NegociacionDeudasContent() {
           opciones para personas y empresas que buscan evitar procesos
           judiciales y recuperar estabilidad financiera.
         </p>
-      </section>
+      </motion.section>
 
       {/* PROBLEMA REAL */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Problemas comunes al tener deudas sin control</h2>
 
         <ul>
@@ -99,10 +134,16 @@ export default function NegociacionDeudasContent() {
           Si no se actúa a tiempo, la deuda puede crecer rápidamente y volverse
           mucho más difícil de manejar.
         </p>
-      </section>
+      </motion.section>
 
       {/* BENEFICIOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Beneficios de negociar sus deudas a tiempo</h2>
 
         <ul>
@@ -112,10 +153,16 @@ export default function NegociacionDeudasContent() {
           <li>Mayor tranquilidad y control económico</li>
           <li>Posibilidad de acuerdos flexibles</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* PROCESO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Cómo funciona nuestro proceso de negociación</h2>
 
         <p>
@@ -136,10 +183,16 @@ export default function NegociacionDeudasContent() {
           Este enfoque permite aumentar significativamente la probabilidad de
           éxito en la negociación.
         </p>
-      </section>
+      </motion.section>
 
-      {/* TIPOS DE DEUDA */}
-      <section className={styles.section}>
+      {/* TIPOS */}
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Tipos de deudas que se pueden negociar</h2>
 
         <ul>
@@ -149,10 +202,16 @@ export default function NegociacionDeudasContent() {
           <li>Deudas con proveedores</li>
           <li>Obligaciones personales</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* CUANDO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>¿Cuándo es el momento ideal para negociar una deuda?</h2>
 
         <p>
@@ -164,39 +223,16 @@ export default function NegociacionDeudasContent() {
           Esperar demasiado puede aumentar los intereses y el riesgo de acciones
           legales por parte del acreedor.
         </p>
-      </section>
-
-      {/* ERRORES */}
-      <section className={styles.section}>
-        <h2>Errores comunes al intentar negociar deudas</h2>
-
-        <ul>
-          <li>Ignorar llamadas o comunicaciones del acreedor</li>
-          <li>No tener claridad sobre la deuda total</li>
-          <li>Aceptar acuerdos imposibles de cumplir</li>
-          <li>No dejar evidencia de los acuerdos</li>
-        </ul>
-      </section>
-
-      {/* DIFERENCIAL */}
-      <section className={styles.section}>
-        <h2>¿Por qué buscar ayuda profesional?</h2>
-
-        <p>
-          Negociar una deuda requiere estrategia, conocimiento legal y
-          experiencia en manejo de acreedores.
-        </p>
-
-        <ul>
-          <li>Mayor capacidad de negociación</li>
-          <li>Mejores condiciones de pago</li>
-          <li>Reducción de presión por parte de acreedores</li>
-          <li>Prevención de errores costosos</li>
-        </ul>
-      </section>
+      </motion.section>
 
       {/* FAQ */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Preguntas frecuentes sobre negociación de deudas</h2>
 
         <div className={styles.faqItem}>
@@ -228,20 +264,31 @@ export default function NegociacionDeudasContent() {
             El acreedor puede iniciar acciones legales como embargo o demanda.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className={styles.ctaBox}>
+      <motion.section
+        className={styles.ctaBox}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2>Recupere el control de sus finanzas</h2>
         <p>
           Negocie sus deudas de forma inteligente y evite problemas legales.
           Estamos listos para ayudarle.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Hablar con un asesor ahora
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 }

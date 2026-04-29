@@ -2,17 +2,29 @@
 
 import styles from "../../styles/Landing.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Page() {
   return (
     <main className={styles.container}>
       {/* HERO */}
-      <section className={styles.hero}>
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1>
           Recuperación de cartera en Bucaramanga: servicios de cobranza para
           empresas y personas
         </h1>
-        <div className={styles.heroLine}></div>
+
+        <motion.div
+          className={styles.heroLine}
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        />
 
         <p>
           Ofrecemos servicios especializados de recuperación de cartera en
@@ -26,48 +38,58 @@ export default function Page() {
           mejorar su flujo de caja.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Solicitar asesoría en Bucaramanga
         </Link>
-      </section>
+      </motion.section>
 
       {/* SERVICIOS */}
       <section className={styles.servicesGrid}>
-        <div className={styles.serviceCard}>
-          <h3>Recuperación de cartera en Bucaramanga</h3>
-          <p>
-            Gestionamos la recuperación de deudas vencidas mediante estrategias
-            adaptadas a cada caso, priorizando resultados rápidos.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Gestión integral de cartera</h3>
-          <p>
-            Administramos todo el proceso de cobranza desde el primer contacto
-            hasta la recuperación efectiva.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Cobranza empresarial</h3>
-          <p>
-            Diseñamos procesos de cobranza para empresas que buscan mejorar su
-            liquidez y reducir cartera vencida.
-          </p>
-        </div>
-
-        <div className={styles.serviceCard}>
-          <h3>Cobro prejurídico y jurídico</h3>
-          <p>
-            Actuamos desde negociación hasta acciones legales para asegurar el
-            pago de la deuda.
-          </p>
-        </div>
+        {[
+          {
+            title: "Recuperación de cartera en Bucaramanga",
+            text: "Gestionamos la recuperación de deudas vencidas mediante estrategias adaptadas a cada caso, priorizando resultados rápidos.",
+          },
+          {
+            title: "Gestión integral de cartera",
+            text: "Administramos todo el proceso de cobranza desde el primer contacto hasta la recuperación efectiva.",
+          },
+          {
+            title: "Cobranza empresarial",
+            text: "Diseñamos procesos de cobranza para empresas que buscan mejorar su liquidez y reducir cartera vencida.",
+          },
+          {
+            title: "Cobro prejurídico y jurídico",
+            text: "Actuamos desde negociación hasta acciones legales para asegurar el pago de la deuda.",
+          },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className={styles.serviceCard}
+            initial={{ opacity: 0, y: 25, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, delay: i * 0.08 }}
+            whileHover={{ y: -6 }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
       </section>
 
       {/* CONTEXTO LOCAL SEO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Recuperación de cartera en Bucaramanga: una necesidad creciente</h2>
 
         <p>
@@ -88,10 +110,15 @@ export default function Page() {
           cartera permite reducir riesgos financieros y mejorar la
           sostenibilidad del negocio.
         </p>
-      </section>
+      </motion.section>
 
       {/* PROBLEMA */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Problemas comunes en la gestión de cartera</h2>
 
         <ul>
@@ -106,10 +133,15 @@ export default function Page() {
           Estos problemas pueden generar pérdidas económicas importantes si no
           se gestionan a tiempo.
         </p>
-      </section>
+      </motion.section>
 
       {/* PROCESO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Cómo funciona nuestro proceso de cobranza</h2>
 
         <p>
@@ -130,10 +162,15 @@ export default function Page() {
           Este enfoque permite aumentar significativamente la tasa de
           recuperación.
         </p>
-      </section>
+      </motion.section>
 
       {/* DIFERENCIAL */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Por qué elegir un servicio profesional de cobranza?</h2>
 
         <p>
@@ -147,10 +184,15 @@ export default function Page() {
           <li>Evitar conflictos con clientes</li>
           <li>Acceder a respaldo legal</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* BENEFICIOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Beneficios de recuperar cartera a tiempo</h2>
 
         <ul>
@@ -159,10 +201,15 @@ export default function Page() {
           <li>Mayor estabilidad financiera</li>
           <li>Optimización de recursos empresariales</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* TIPOS */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Tipos de cartera que gestionamos</h2>
 
         <ul>
@@ -171,20 +218,30 @@ export default function Page() {
           <li>Cartera de servicios</li>
           <li>Cartera personal</li>
         </ul>
-      </section>
+      </motion.section>
 
       {/* CUANDO */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>¿Cuándo iniciar la recuperación de cartera?</h2>
 
         <p>
           Lo ideal es iniciar la gestión desde el primer incumplimiento de pago.
           Entre más tiempo pase, más difícil será recuperar la deuda.
         </p>
-      </section>
+      </motion.section>
 
       {/* FAQ */}
-      <section className={styles.section}>
+      <motion.section
+        className={styles.section}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <h2>Preguntas frecuentes sobre cobranza en Bucaramanga</h2>
 
         <div className={styles.faqItem}>
@@ -206,20 +263,31 @@ export default function Page() {
           <h3>¿Qué pasa si el deudor no paga?</h3>
           <p>Se puede iniciar un proceso jurídico para exigir el pago.</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA FINAL */}
-      <section className={styles.ctaBox}>
+      <motion.section
+        className={styles.ctaBox}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2>Recupere su cartera en Bucaramanga hoy</h2>
         <p>
           No permita que las deudas afecten su negocio. Nuestro equipo está
           listo para ayudarle a recuperar su dinero de forma efectiva.
         </p>
 
-        <Link href="/contacto" className={styles.ctaButton}>
+        <Link
+          href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
+          className={styles.ctaButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Hablar con un especialista
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 }
