@@ -68,6 +68,10 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          {/* TOOLTIP CTA */}
+          <span className={styles.tooltip}>
+            💬 Recupera tu cartera hoy mismo
+          </span>
           <span className={styles.icon}>
             <FontAwesomeIcon icon={faWhatsapp} />
           </span>

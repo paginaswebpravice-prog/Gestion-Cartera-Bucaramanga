@@ -133,6 +133,76 @@
   border: 2px solid #00669c;
 }
 
+/* ================= TOOLTIP WHATSAPP ================= */
+
+.social {
+  position: relative; /* necesario para posicionar el tooltip */
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+
+  background: #ffffff;
+  color: #000;
+
+  padding: 9px 13px;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+
+  animation: tooltipLoop 5.5s infinite;
+}
+
+/* flechita */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 16px;
+
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+
+  transform: rotate(45deg);
+}
+
+/* loop infinito */
+@keyframes tooltipLoop {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+
+  12% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  45% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  60% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
